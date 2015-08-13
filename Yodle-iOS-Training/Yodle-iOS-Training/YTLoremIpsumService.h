@@ -10,6 +10,6 @@
 
 @interface YTLoremIpsumService : NSObject
 
-- (YTLoremIpsum*)fetchLoremIpsum;
+//- (YTLoremIpsum*)fetchLoremIpsum;
 
 @end

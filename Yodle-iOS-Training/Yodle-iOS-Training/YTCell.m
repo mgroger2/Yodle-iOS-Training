@@ -18,16 +18,11 @@
 
 @implementation YTCell
 
-- (instancetype)init
+- (void)initialSetup
 {
-	if (self = [super init]) {
-		_loremIpsum = [[YTLoremIpsum alloc] init];
-	}
-	return self;
-}
-
-- (void)configureIsLoading
-{
+	_loremIpsum = [[YTLoremIpsum alloc] init];
+	_loremIpsum.delegate = self;
+	
 	self.thumbnail.image = [UIImage imageNamed:@"loadingImage.png"];
 	self.titleLabel.text = @"Loading...";
 	self.descriptionLabel.text = @"";

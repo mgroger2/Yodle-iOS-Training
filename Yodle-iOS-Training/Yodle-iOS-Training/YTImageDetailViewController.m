@@ -10,7 +10,7 @@
 
 @interface YTImageDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView* imgeDetail;
+@property (weak, nonatomic) IBOutlet UIImageView* imageDetail;
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
 
@@ -20,9 +20,9 @@
 
 - (void)configureLoremIpsum:(YTLoremIpsum*)loremIpsum
 {
-	self.imgeDetail.image = loremIpsum.image;
-	self.titleLabel.text = loremIpsum.title;
-	self.descriptionLabel.text = loremIpsum.body;
+	self.imageDetail.image = loremIpsum.image;
+	self.titleLabel.text = loremIpsum.text[@"title"];
+	self.descriptionLabel.text = loremIpsum.text[@"body"];
 }
 
 @end

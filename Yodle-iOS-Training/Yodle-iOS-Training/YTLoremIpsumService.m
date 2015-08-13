@@ -18,28 +18,28 @@
 
 @implementation YTLoremIpsumService
 
-- (instancetype)init
-{
-	if (self = [super init]) {
-		_apiService = [[YTAPIService alloc] init];
-	}
-	return self;
-}
-
-- (YTLoremIpsum*)fetchLoremIpsum
-{
-	YTLoremIpsum* loremIpsum = [[YTLoremIpsum alloc] init];
-	
-	[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* loremImage) {
-		loremIpsum.image = loremImage;
-	}];
-	
-	[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* loremText) {
-		loremIpsum.title = loremText[@"title"];
-		loremIpsum.title = loremText[@"body"];
-	}];
-	
-	return loremIpsum;
-}
+//- (instancetype)init
+//{
+//	if (self = [super init]) {
+//		_apiService = [[YTAPIService alloc] init];
+//	}
+//	return self;
+//}
+//
+//- (YTLoremIpsum*)fetchLoremIpsum
+//{
+//	YTLoremIpsum* loremIpsum = [[YTLoremIpsum alloc] init];
+//	
+//	[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* loremImage) {
+//		loremIpsum.image = loremImage;
+//	}];
+//	
+//	[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* loremText) {
+//		loremIpsum.title = loremText[@"title"];
+//		loremIpsum.title = loremText[@"body"];
+//	}];
+//	
+//	return loremIpsum;
+//}
 
 @end

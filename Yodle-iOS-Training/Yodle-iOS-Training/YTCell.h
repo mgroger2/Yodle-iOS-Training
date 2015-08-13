@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) YTLoremIpsum* loremIpsum;
 
+- (void)initialSetup;
+
 @end

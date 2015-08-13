@@ -40,15 +40,19 @@
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:[YTCell description] forIndexPath:indexPath];
+    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
 	
-	[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* image) {
-		cell.loremIpsum.image = image;
-	}];
-	
-	[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
-		cell.loremIpsum.text = dictionary;
-	}];
+	if (!cell.loremIpsum) {
+		[cell initialSetup];
+		
+		[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* image) {
+			cell.loremIpsum.image = image;
+		}];
+		
+		[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
+			cell.loremIpsum.text = dictionary;
+		}];
+	}
 	
     return cell;
 }

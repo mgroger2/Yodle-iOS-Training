@@ -44,10 +44,11 @@ NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://loripsum.net/api/1/
 		dispatch_sync(dispatch_get_main_queue(), ^{
 			if (completion) {
 				NSString* successString = [[NSString alloc] initWithData:textData encoding:NSUTF8StringEncoding];
+				successString = [successString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 				NSArray* successArray = [successString componentsSeparatedByString: @"\n\n"];
 				NSDictionary* successDictionary = @{
-				  @"title":successArray[0],
-				  @"body":successArray[1]
+				  @"title":[successArray firstObject],
+				  @"body":[successArray lastObject]
 				};
 				completion(successDictionary);
 			}
