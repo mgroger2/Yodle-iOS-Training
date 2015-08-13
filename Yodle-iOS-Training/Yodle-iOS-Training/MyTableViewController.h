@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyTableViewController.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MyTableViewController : UITableViewController
 
 @end
-

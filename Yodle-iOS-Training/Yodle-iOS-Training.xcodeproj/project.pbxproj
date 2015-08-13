@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		43192A3C1B7CEBF300943B6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A3B1B7CEBF300943B6C /* main.m */; };
 		43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A3E1B7CEBF300943B6C /* AppDelegate.m */; };
-		43192A421B7CEBF300943B6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A411B7CEBF300943B6C /* ViewController.m */; };
 		43192A451B7CEBF300943B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43192A431B7CEBF300943B6C /* Main.storyboard */; };
 		43192A471B7CEBF300943B6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43192A461B7CEBF300943B6C /* Images.xcassets */; };
 		43192A4A1B7CEBF300943B6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43192A481B7CEBF300943B6C /* LaunchScreen.xib */; };
 		43192A561B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */; };
+		43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* MyTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		43192A3B1B7CEBF300943B6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43192A3D1B7CEBF300943B6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43192A3E1B7CEBF300943B6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43192A401B7CEBF300943B6C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		43192A411B7CEBF300943B6C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		43192A441B7CEBF300943B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43192A461B7CEBF300943B6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43192A491B7CEBF300943B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43192A4F1B7CEBF300943B6C /* Yodle-iOS-TrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yodle-iOS-TrainingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43192A541B7CEBF300943B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yodle_iOS_TrainingTests.m; sourceTree = "<group>"; };
+		43192A601B7CEC9C00943B6C /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		43192A611B7CEC9C00943B6C /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,9 @@
 		43192A381B7CEBF300943B6C /* Yodle-iOS-Training */ = {
 			isa = PBXGroup;
 			children = (
+				43192A5F1B7CEC8500943B6C /* New Group */,
 				43192A3D1B7CEBF300943B6C /* AppDelegate.h */,
 				43192A3E1B7CEBF300943B6C /* AppDelegate.m */,
-				43192A401B7CEBF300943B6C /* ViewController.h */,
-				43192A411B7CEBF300943B6C /* ViewController.m */,
 				43192A431B7CEBF300943B6C /* Main.storyboard */,
 				43192A461B7CEBF300943B6C /* Images.xcassets */,
 				43192A481B7CEBF300943B6C /* LaunchScreen.xib */,
@@ -117,6 +116,15 @@
 				43192A541B7CEBF300943B6C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43192A5F1B7CEC8500943B6C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				43192A601B7CEC9C00943B6C /* MyTableViewController.h */,
+				43192A611B7CEC9C00943B6C /* MyTableViewController.m */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43192A421B7CEBF300943B6C /* ViewController.m in Sources */,
+				43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */,
 				43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */,
 				43192A3C1B7CEBF300943B6C /* main.m in Sources */,
 			);
