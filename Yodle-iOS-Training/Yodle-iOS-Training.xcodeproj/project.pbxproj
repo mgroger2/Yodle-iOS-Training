@@ -15,8 +15,11 @@
 		43192A561B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */; };
 		43192A621B7CEC9C00943B6C /* YTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */; };
 		43192A661B7CECE900943B6C /* YTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A651B7CECE900943B6C /* YTCell.m */; };
-		43192A6A1B7CF45500943B6C /* YTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* YTNetworkService.m */; };
+		43192A6A1B7CF45500943B6C /* YTAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* YTAPIService.m */; };
 		43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */; };
+		43192A721B7D027000943B6C /* YTLoremIpsumService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A711B7D027000943B6C /* YTLoremIpsumService.m */; };
+		43192A781B7D029400943B6C /* YTHTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A771B7D029400943B6C /* YTHTTPService.m */; };
+		43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +48,16 @@
 		43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTMainTableViewController.m; sourceTree = "<group>"; };
 		43192A641B7CECE900943B6C /* YTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTCell.h; sourceTree = "<group>"; };
 		43192A651B7CECE900943B6C /* YTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTCell.m; sourceTree = "<group>"; };
-		43192A681B7CF45500943B6C /* YTNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkService.h; sourceTree = "<group>"; };
-		43192A691B7CF45500943B6C /* YTNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkService.m; sourceTree = "<group>"; };
+		43192A681B7CF45500943B6C /* YTAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAPIService.h; sourceTree = "<group>"; };
+		43192A691B7CF45500943B6C /* YTAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAPIService.m; sourceTree = "<group>"; };
 		43192A6C1B7CF4C400943B6C /* YTLoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsum.h; sourceTree = "<group>"; };
 		43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoremIpsum.m; sourceTree = "<group>"; };
+		43192A701B7D027000943B6C /* YTLoremIpsumService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsumService.h; sourceTree = "<group>"; };
+		43192A711B7D027000943B6C /* YTLoremIpsumService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoremIpsumService.m; sourceTree = "<group>"; };
+		43192A761B7D029400943B6C /* YTHTTPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTHTTPService.h; sourceTree = "<group>"; };
+		43192A771B7D029400943B6C /* YTHTTPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTHTTPService.m; sourceTree = "<group>"; };
+		43192A7B1B7D04D500943B6C /* YTImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTImageDetailViewController.h; sourceTree = "<group>"; };
+		43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTImageDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,7 @@
 				43192A631B7CECD400943B6C /* View */,
 				43192A5F1B7CEC8500943B6C /* Controller */,
 				43192A671B7CF42C00943B6C /* Services */,
+				43192A6F1B7D023F00943B6C /* Category */,
 				43192A3D1B7CEBF300943B6C /* AppDelegate.h */,
 				43192A3E1B7CEBF300943B6C /* AppDelegate.m */,
 				43192A431B7CEBF300943B6C /* Main.storyboard */,
@@ -133,8 +143,8 @@
 		43192A5F1B7CEC8500943B6C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				43192A601B7CEC9C00943B6C /* YTMainTableViewController.h */,
-				43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */,
+				43192A7A1B7D04BB00943B6C /* Image Detail */,
+				43192A791B7D04AE00943B6C /* Main Table */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -151,8 +161,9 @@
 		43192A671B7CF42C00943B6C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				43192A681B7CF45500943B6C /* YTNetworkService.h */,
-				43192A691B7CF45500943B6C /* YTNetworkService.m */,
+				43192A731B7D027800943B6C /* API */,
+				43192A751B7D028600943B6C /* HTTP */,
+				43192A741B7D027F00943B6C /* Lorem Ipsum */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -164,6 +175,58 @@
 				43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		43192A6F1B7D023F00943B6C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		43192A731B7D027800943B6C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				43192A681B7CF45500943B6C /* YTAPIService.h */,
+				43192A691B7CF45500943B6C /* YTAPIService.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		43192A741B7D027F00943B6C /* Lorem Ipsum */ = {
+			isa = PBXGroup;
+			children = (
+				43192A701B7D027000943B6C /* YTLoremIpsumService.h */,
+				43192A711B7D027000943B6C /* YTLoremIpsumService.m */,
+			);
+			name = "Lorem Ipsum";
+			sourceTree = "<group>";
+		};
+		43192A751B7D028600943B6C /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				43192A761B7D029400943B6C /* YTHTTPService.h */,
+				43192A771B7D029400943B6C /* YTHTTPService.m */,
+			);
+			name = HTTP;
+			sourceTree = "<group>";
+		};
+		43192A791B7D04AE00943B6C /* Main Table */ = {
+			isa = PBXGroup;
+			children = (
+				43192A601B7CEC9C00943B6C /* YTMainTableViewController.h */,
+				43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */,
+			);
+			name = "Main Table";
+			sourceTree = "<group>";
+		};
+		43192A7A1B7D04BB00943B6C /* Image Detail */ = {
+			isa = PBXGroup;
+			children = (
+				43192A7B1B7D04D500943B6C /* YTImageDetailViewController.h */,
+				43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */,
+			);
+			name = "Image Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43192A6A1B7CF45500943B6C /* YTNetworkService.m in Sources */,
+				43192A781B7D029400943B6C /* YTHTTPService.m in Sources */,
+				43192A6A1B7CF45500943B6C /* YTAPIService.m in Sources */,
 				43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */,
+				43192A721B7D027000943B6C /* YTLoremIpsumService.m in Sources */,
 				43192A621B7CEC9C00943B6C /* YTMainTableViewController.m in Sources */,
 				43192A661B7CECE900943B6C /* YTCell.m in Sources */,
+				43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */,
 				43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */,
 				43192A3C1B7CEBF300943B6C /* main.m in Sources */,
 			);

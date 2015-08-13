@@ -15,4 +15,7 @@
 @property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString* body;
 
++ (CGSize)imageSize;
+- (UIImage*)thumbnail;
+
 @end

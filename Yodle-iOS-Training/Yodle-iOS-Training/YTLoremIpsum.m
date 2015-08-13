@@ -8,6 +8,28 @@
 
 #import "YTLoremIpsum.h"
 
+NSUInteger const YTLoremIpsumFullImageWidth = 80;
+NSUInteger const YTLoremIpsumFullImageHeight = 80;
+NSUInteger const YTLoremIpsumThumbnailWidth = 80;
+NSUInteger const YTLoremIpsumThumbnailHeight = 80;
+
 @implementation YTLoremIpsum
+
++ (CGSize)imageSize
+{
+	
+}
+
+- (UIImage*)thumbnail
+{
+	CGSize destinationSize = CGSizeMake(YTLoremIpsumThumbnailWidth, YTLoremIpsumThumbnailHeight);
+	
+	UIGraphicsBeginImageContext(destinationSize);
+	[self.image drawInRect:CGRectMake(0, 0, destinationSize.width, destinationSize.height)];
+	UIImage* thumbnail = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return thumbnail;
+}
 
 @end
