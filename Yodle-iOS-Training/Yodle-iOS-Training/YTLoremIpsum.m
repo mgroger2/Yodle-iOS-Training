@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Mark Rogers. All rights reserved.
 //
 
-#import "MyDataStructure.h"
+#import "YTLoremIpsum.h"
 
-@implementation MyDataStructure
+@implementation YTLoremIpsum
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MyDataStructure : NSObject
+@interface YTLoremIpsum : NSObject
 
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSString* title;

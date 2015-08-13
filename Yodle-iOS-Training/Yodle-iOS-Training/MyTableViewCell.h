@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyDataStructure.h"
+#import "YTLoremIpsum.h"
 
 @interface MyTableViewCell : UITableViewCell
 
-- (void)configureDataStructure:(MyDataStructure*)dataStructure;
+- (void)configureDataStructure:(YTLoremIpsum*)dataStructure;
 
 @end

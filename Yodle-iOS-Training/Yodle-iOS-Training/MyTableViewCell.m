@@ -18,7 +18,7 @@
 
 @implementation MyTableViewCell
 
-- (void)configureDataStructure:(MyDataStructure*)dataStructure
+- (void)configureDataStructure:(YTLoremIpsum*)dataStructure
 {
 	self.thumbnail.image = dataStructure.image;
 	self.titleLabel.text = dataStructure.title;

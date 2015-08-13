@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MyDataStructure.h"
+#import "YTLoremIpsum.h"
 
 @interface MyNetworkService : NSObject
 
-- (MyDataStructure*)fetchDataStructure;
+- (YTLoremIpsum*)fetchDataStructure;
 
 @end

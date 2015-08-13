@@ -10,7 +10,7 @@
 
 @implementation MyNetworkService
 
-- (MyDataStructure*)fetchDataStructure
+- (YTLoremIpsum*)fetchDataStructure
 {
 	
 }

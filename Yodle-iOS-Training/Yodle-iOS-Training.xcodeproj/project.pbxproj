@@ -16,7 +16,7 @@
 		43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* MyTableViewController.m */; };
 		43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A651B7CECE900943B6C /* MyTableViewCell.m */; };
 		43192A6A1B7CF45500943B6C /* MyNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* MyNetworkService.m */; };
-		43192A6E1B7CF4C400943B6C /* MyDataStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* MyDataStructure.m */; };
+		43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,8 @@
 		43192A651B7CECE900943B6C /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		43192A681B7CF45500943B6C /* MyNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNetworkService.h; sourceTree = "<group>"; };
 		43192A691B7CF45500943B6C /* MyNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNetworkService.m; sourceTree = "<group>"; };
-		43192A6C1B7CF4C400943B6C /* MyDataStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataStructure.h; sourceTree = "<group>"; };
-		43192A6D1B7CF4C400943B6C /* MyDataStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataStructure.m; sourceTree = "<group>"; };
+		43192A6C1B7CF4C400943B6C /* YTLoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsum.h; sourceTree = "<group>"; };
+		43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoremIpsum.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 		43192A6B1B7CF4A900943B6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				43192A6C1B7CF4C400943B6C /* MyDataStructure.h */,
-				43192A6D1B7CF4C400943B6C /* MyDataStructure.m */,
+				43192A6C1B7CF4C400943B6C /* YTLoremIpsum.h */,
+				43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43192A6A1B7CF45500943B6C /* MyNetworkService.m in Sources */,
-				43192A6E1B7CF4C400943B6C /* MyDataStructure.m in Sources */,
+				43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */,
 				43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */,
 				43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */,
 				43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */,
