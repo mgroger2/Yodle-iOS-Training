@@ -8,8 +8,21 @@
 
 #import "MyTableViewCell.h"
 
+@interface MyTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView* thumbnail;
+@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
+
+@end
+
 @implementation MyTableViewCell
 
-
+- (void)configureDataStructure:(MyDataStructure*)dataStructure
+{
+	self.thumbnail.image = dataStructure.image;
+	self.titleLabel.text = dataStructure.title;
+	self.descriptionLabel.text = dataStructure.body;
+}
 
 @end
