@@ -19,6 +19,7 @@
 		43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */; };
 		43192A721B7D027000943B6C /* YTLoremIpsumService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A711B7D027000943B6C /* YTLoremIpsumService.m */; };
 		43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */; };
+		43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A811B7D251300943B6C /* NSNumber+Random.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		43192A7B1B7D04D500943B6C /* YTImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTImageDetailViewController.h; sourceTree = "<group>"; };
 		43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTImageDetailViewController.m; sourceTree = "<group>"; };
 		43192A7F1B7D1A9500943B6C /* YTLoremIpsumDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsumDelegate.h; sourceTree = "<group>"; };
+		43192A801B7D251300943B6C /* NSNumber+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Random.h"; sourceTree = "<group>"; };
+		43192A811B7D251300943B6C /* NSNumber+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Random.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,8 @@
 		43192A6F1B7D023F00943B6C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				43192A801B7D251300943B6C /* NSNumber+Random.h */,
+				43192A811B7D251300943B6C /* NSNumber+Random.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */,
 				43192A6A1B7CF45500943B6C /* YTAPIService.m in Sources */,
 				43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */,
 				43192A721B7D027000943B6C /* YTLoremIpsumService.m in Sources */,

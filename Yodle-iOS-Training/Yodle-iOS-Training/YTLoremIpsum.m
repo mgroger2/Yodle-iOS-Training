@@ -8,8 +8,7 @@
 
 #import "YTLoremIpsum.h"
 
-NSUInteger const YTLoremIpsumFullImageWidth = 80;
-NSUInteger const YTLoremIpsumFullImageHeight = 80;
+NSUInteger const YTLoremIpsumScreenPadding = 20;
 NSUInteger const YTLoremIpsumThumbnailWidth = 80;
 NSUInteger const YTLoremIpsumThumbnailHeight = 80;
 
@@ -17,7 +16,10 @@ NSUInteger const YTLoremIpsumThumbnailHeight = 80;
 
 + (CGSize)maxImageSize
 {
-	return CGSizeMake(YTLoremIpsumFullImageWidth, YTLoremIpsumFullImageHeight);
+	CGSize deviceScreenSize = [[UIScreen mainScreen] bounds].size;
+	CGFloat maximumWidth = deviceScreenSize.width - YTLoremIpsumScreenPadding;
+	
+	return CGSizeMake(maximumWidth, maximumWidth);
 }
 
 - (UIImage*)thumbnail

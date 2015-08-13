@@ -11,6 +11,6 @@
 
 @interface YTImageDetailViewController : UIViewController
 
-- (void)configureLoremIpsum:(YTLoremIpsum*)loremIpsum;
+@property (strong, nonatomic) YTLoremIpsum* loremIpsum;
 
 @end

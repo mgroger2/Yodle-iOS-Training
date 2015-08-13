@@ -13,16 +13,25 @@
 @property (weak, nonatomic) IBOutlet UIImageView* imageDetail;
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
 
 @end
 
 @implementation YTImageDetailViewController
 
-- (void)configureLoremIpsum:(YTLoremIpsum*)loremIpsum
+- (void)viewDidLoad
 {
-	self.imageDetail.image = loremIpsum.image;
-	self.titleLabel.text = loremIpsum.text[@"title"];
-	self.descriptionLabel.text = loremIpsum.text[@"body"];
+	[self changeImage:self.loremIpsum.image];
+	self.titleLabel.text = self.loremIpsum.text[@"title"];
+	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
+}
+
+- (void)changeImage:(UIImage*)image
+{
+	self.imageDetail.image = image;
+	self.imageWidthConstraint.constant = image.size.width;
+	self.imageHeightConstraint.constant = image.size.height;
 }
 
 @end

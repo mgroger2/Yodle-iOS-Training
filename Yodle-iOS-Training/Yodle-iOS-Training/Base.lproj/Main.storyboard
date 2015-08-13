@@ -2,11 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yuC-bp-BQs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--List of Murrays-->
         <scene sceneID="6g4-hy-n7N">
             <objects>
                 <tableViewController id="IgT-EL-D5v" customClass="YTMainTableViewController" sceneMemberID="viewController">
@@ -69,16 +68,16 @@
                             <outlet property="delegate" destination="IgT-EL-D5v" id="OXc-xO-MY8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="dXv-yZ-ebu"/>
+                    <navigationItem key="navigationItem" title="List of Murrays" id="dXv-yZ-ebu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iz2-Ov-fc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="108"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail of Murray-->
         <scene sceneID="FHX-Xj-ban">
             <objects>
-                <viewController id="dme-xt-I75" sceneMemberID="viewController">
+                <viewController id="dme-xt-I75" customClass="YTImageDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gX2-DF-J2z"/>
                         <viewControllerLayoutGuide type="bottom" id="UIC-5t-2Zd"/>
@@ -88,22 +87,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6li-TM-uaG">
-                                <rect key="frame" x="16" y="0.0" width="546.5" height="546.5"/>
+                                <rect key="frame" x="150" y="65" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6li-TM-uaG" secondAttribute="height" multiplier="1:1" id="SuS-8M-XF7"/>
+                                    <constraint firstAttribute="height" constant="300" id="OAb-R5-lRF"/>
+                                    <constraint firstAttribute="width" constant="300" id="nln-vJ-xtJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
-                                <rect key="frame" x="16" y="556" width="568" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
+                                <rect key="frame" x="16" y="375" width="568" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="iuu-Iw-dnf"/>
+                                    <constraint firstAttribute="height" constant="42" id="iuu-Iw-dnf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-v1-a54">
-                                <rect key="frame" x="16" y="579.5" width="568" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-v1-a54">
+                                <rect key="frame" x="16" y="419" width="568" height="180.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,17 +112,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UIC-5t-2Zd" firstAttribute="top" secondItem="jNh-v1-a54" secondAttribute="bottom" id="B7i-tR-SzH"/>
-                            <constraint firstItem="6li-TM-uaG" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leadingMargin" id="DbR-X0-ydb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6li-TM-uaG" secondAttribute="trailing" id="SDo-jY-VY8"/>
+                            <constraint firstAttribute="centerX" secondItem="6li-TM-uaG" secondAttribute="centerX" id="QgL-sG-pJS"/>
                             <constraint firstItem="iWm-J2-t31" firstAttribute="top" secondItem="6li-TM-uaG" secondAttribute="bottom" constant="10" id="Vfa-ja-5rB"/>
                             <constraint firstItem="jNh-v1-a54" firstAttribute="top" secondItem="iWm-J2-t31" secondAttribute="bottom" constant="2" id="cY7-Mq-RpC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iWm-J2-t31" secondAttribute="trailing" id="fNm-My-YWg"/>
-                            <constraint firstItem="6li-TM-uaG" firstAttribute="top" secondItem="yCj-lb-IAg" secondAttribute="topMargin" id="khr-f6-4Kc"/>
+                            <constraint firstItem="6li-TM-uaG" firstAttribute="top" secondItem="yCj-lb-IAg" secondAttribute="topMargin" constant="65" id="khr-f6-4Kc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jNh-v1-a54" secondAttribute="trailing" id="pdC-wc-N6H"/>
                             <constraint firstItem="jNh-v1-a54" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leadingMargin" id="q3t-D8-p1p"/>
                             <constraint firstItem="iWm-J2-t31" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leadingMargin" id="vo4-K1-4o9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail of Murray" id="bBA-FG-Y2p"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="jNh-v1-a54" id="nfv-kH-vTW"/>
+                        <outlet property="imageDetail" destination="6li-TM-uaG" id="RO4-dX-Pcw"/>
+                        <outlet property="imageHeightConstraint" destination="OAb-R5-lRF" id="xIw-FO-qfZ"/>
+                        <outlet property="imageWidthConstraint" destination="nln-vJ-xtJ" id="SGv-3w-F4X"/>
+                        <outlet property="titleLabel" destination="iWm-J2-t31" id="Wd6-0h-XY8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec5-mN-2I7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

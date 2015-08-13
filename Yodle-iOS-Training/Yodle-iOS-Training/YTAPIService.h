@@ -11,7 +11,7 @@
 
 @interface YTAPIService : NSObject
 
-- (void)fetchImageWithSize:(CGSize)size completion:(void(^)(UIImage*))completion;
+- (void)fetchImageWithMaxSize:(CGSize)size completion:(void(^)(UIImage*))completion;
 - (void)fetchLoremIpsumTextWithCompletion:(void(^)(NSDictionary*))completion;
 
 @end

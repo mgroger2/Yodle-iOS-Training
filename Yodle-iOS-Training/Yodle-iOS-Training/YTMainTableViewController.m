@@ -45,7 +45,7 @@
 	if (!cell.loremIpsum) {
 		[cell initialSetup];
 		
-		[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* image) {
+		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] completion:^(UIImage* image) {
 			cell.loremIpsum.image = image;
 		}];
 		
@@ -63,7 +63,7 @@
 {
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
-		[destination configureLoremIpsum:((YTCell*)sender).loremIpsum];
+		destination.loremIpsum = ((YTCell*)sender).loremIpsum;
 	}
 }
 
