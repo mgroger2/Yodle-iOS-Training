@@ -1,19 +1,19 @@
 //
-//  MyTableViewController.m
+//  YTMainTableViewController.m
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
 //  Copyright (c) 2015 Mark Rogers. All rights reserved.
 //
 
-#import "MyTableViewController.h"
-#import "MyTableViewCell.h"
+#import "YTMainTableViewController.h"
+#import "YTCell.h"
 
-@interface MyTableViewController ()
+@interface YTMainTableViewController ()
 
 @end
 
-@implementation MyTableViewController
+@implementation YTMainTableViewController
 
 - (void)viewDidLoad
 {
@@ -36,7 +36,7 @@
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    MyTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:[MyTableViewCell description] forIndexPath:indexPath];
+    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:[YTCell description] forIndexPath:indexPath];
 	
 	
     

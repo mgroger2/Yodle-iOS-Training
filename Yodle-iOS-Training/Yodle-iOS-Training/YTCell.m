@@ -1,14 +1,14 @@
 //
-//  MyTableViewCell.m
+//  YTCell.m
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
 //  Copyright (c) 2015 Mark Rogers. All rights reserved.
 //
 
-#import "MyTableViewCell.h"
+#import "YTCell.h"
 
-@interface MyTableViewCell ()
+@interface YTCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView* thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MyTableViewCell
+@implementation YTCell
 
 - (void)configureDataStructure:(YTLoremIpsum*)dataStructure
 {

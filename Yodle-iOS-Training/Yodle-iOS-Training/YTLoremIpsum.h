@@ -1,5 +1,5 @@
 //
-//  MyDataStructure.h
+//  YTLoremIpsum.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.

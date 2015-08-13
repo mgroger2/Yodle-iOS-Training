@@ -1,5 +1,5 @@
 //
-//  MyTableViewCell.h
+//  YTMainTableViewController.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YTLoremIpsum.h"
 
-@interface MyTableViewCell : UITableViewCell
-
-- (void)configureDataStructure:(YTLoremIpsum*)dataStructure;
+@interface YTMainTableViewController : UITableViewController
 
 @end

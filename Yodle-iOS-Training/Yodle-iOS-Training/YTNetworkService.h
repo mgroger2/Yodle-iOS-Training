@@ -1,5 +1,5 @@
 //
-//  MyNetworkService.h
+//  YTNetworkService.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "YTLoremIpsum.h"
 
-@interface MyNetworkService : NSObject
+@interface YTNetworkService : NSObject
 
-- (YTLoremIpsum*)fetchDataStructure;
+- (YTLoremIpsum*)fetchLoremIpsum;
 
 @end

@@ -13,9 +13,9 @@
 		43192A471B7CEBF300943B6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43192A461B7CEBF300943B6C /* Images.xcassets */; };
 		43192A4A1B7CEBF300943B6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43192A481B7CEBF300943B6C /* LaunchScreen.xib */; };
 		43192A561B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */; };
-		43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* MyTableViewController.m */; };
-		43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A651B7CECE900943B6C /* MyTableViewCell.m */; };
-		43192A6A1B7CF45500943B6C /* MyNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* MyNetworkService.m */; };
+		43192A621B7CEC9C00943B6C /* YTMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */; };
+		43192A661B7CECE900943B6C /* YTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A651B7CECE900943B6C /* YTCell.m */; };
+		43192A6A1B7CF45500943B6C /* YTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* YTNetworkService.m */; };
 		43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */; };
 /* End PBXBuildFile section */
 
@@ -41,12 +41,12 @@
 		43192A4F1B7CEBF300943B6C /* Yodle-iOS-TrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yodle-iOS-TrainingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43192A541B7CEBF300943B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yodle_iOS_TrainingTests.m; sourceTree = "<group>"; };
-		43192A601B7CEC9C00943B6C /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
-		43192A611B7CEC9C00943B6C /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
-		43192A641B7CECE900943B6C /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
-		43192A651B7CECE900943B6C /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
-		43192A681B7CF45500943B6C /* MyNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNetworkService.h; sourceTree = "<group>"; };
-		43192A691B7CF45500943B6C /* MyNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNetworkService.m; sourceTree = "<group>"; };
+		43192A601B7CEC9C00943B6C /* YTMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTMainTableViewController.h; sourceTree = "<group>"; };
+		43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTMainTableViewController.m; sourceTree = "<group>"; };
+		43192A641B7CECE900943B6C /* YTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTCell.h; sourceTree = "<group>"; };
+		43192A651B7CECE900943B6C /* YTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTCell.m; sourceTree = "<group>"; };
+		43192A681B7CF45500943B6C /* YTNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkService.h; sourceTree = "<group>"; };
+		43192A691B7CF45500943B6C /* YTNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkService.m; sourceTree = "<group>"; };
 		43192A6C1B7CF4C400943B6C /* YTLoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsum.h; sourceTree = "<group>"; };
 		43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoremIpsum.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,8 +133,8 @@
 		43192A5F1B7CEC8500943B6C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				43192A601B7CEC9C00943B6C /* MyTableViewController.h */,
-				43192A611B7CEC9C00943B6C /* MyTableViewController.m */,
+				43192A601B7CEC9C00943B6C /* YTMainTableViewController.h */,
+				43192A611B7CEC9C00943B6C /* YTMainTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -142,8 +142,8 @@
 		43192A631B7CECD400943B6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				43192A641B7CECE900943B6C /* MyTableViewCell.h */,
-				43192A651B7CECE900943B6C /* MyTableViewCell.m */,
+				43192A641B7CECE900943B6C /* YTCell.h */,
+				43192A651B7CECE900943B6C /* YTCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		43192A671B7CF42C00943B6C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				43192A681B7CF45500943B6C /* MyNetworkService.h */,
-				43192A691B7CF45500943B6C /* MyNetworkService.m */,
+				43192A681B7CF45500943B6C /* YTNetworkService.h */,
+				43192A691B7CF45500943B6C /* YTNetworkService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -266,10 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43192A6A1B7CF45500943B6C /* MyNetworkService.m in Sources */,
+				43192A6A1B7CF45500943B6C /* YTNetworkService.m in Sources */,
 				43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */,
-				43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */,
-				43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */,
+				43192A621B7CEC9C00943B6C /* YTMainTableViewController.m in Sources */,
+				43192A661B7CECE900943B6C /* YTCell.m in Sources */,
 				43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */,
 				43192A3C1B7CEBF300943B6C /* main.m in Sources */,
 			);
