@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "YTLoremIpsum.h"
+#import "YTLoremIpsumDelegate.h"
 
-@interface YTCell : UITableViewCell
+@interface YTCell : UITableViewCell <YTLoremIpsumDelegate>
 
-- (void)configureDataStructure:(YTLoremIpsum*)dataStructure;
+@property (strong, nonatomic) YTLoremIpsum* loremIpsum;
 
 @end

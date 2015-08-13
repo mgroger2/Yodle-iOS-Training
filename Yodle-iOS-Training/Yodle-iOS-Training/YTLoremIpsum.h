@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "YTLoremIpsumDelegate.h"
 
 @interface YTLoremIpsum : NSObject
 
 @property (strong, nonatomic) UIImage* image;
-@property (strong, nonatomic) NSString* title;
-@property (strong, nonatomic) NSString* body;
+@property (strong, nonatomic) NSDictionary* text;
+@property (weak, nonatomic) id<YTLoremIpsumDelegate> delegate;
 
 + (CGSize)imageSize;
 - (UIImage*)thumbnail;

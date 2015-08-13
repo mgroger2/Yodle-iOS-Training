@@ -1,5 +1,5 @@
 //
-//  YTHTTPService.h
+//  YTLoremIpsumDelegate.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YTHTTPService : NSObject
+@protocol YTLoremIpsumDelegate <NSObject>
+
+- (void)loremIpsumImageDidFinishDownloading;
+- (void)loremIpsumTextDidFinishDownloading;
 
 @end

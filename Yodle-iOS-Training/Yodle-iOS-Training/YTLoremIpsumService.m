@@ -8,6 +8,7 @@
 
 #import "YTLoremIpsumService.h"
 #import "YTAPIService.h"
+#import "YTLoremIpsum.h"
 
 @interface YTLoremIpsumService ()
 
@@ -29,11 +30,14 @@
 {
 	YTLoremIpsum* loremIpsum = [[YTLoremIpsum alloc] init];
 	
-	loremIpsum.image = [self.apiService fetchImage];
+	[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* loremImage) {
+		loremIpsum.image = loremImage;
+	}];
 	
-	NSDictionary* loremText = [self.apiService fetchLoremIpsumText];
-	loremIpsum.title = loremText[@"title"];
-	loremIpsum.title = loremText[@"body"];
+	[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* loremText) {
+		loremIpsum.title = loremText[@"title"];
+		loremIpsum.title = loremText[@"body"];
+	}];
 	
 	return loremIpsum;
 }

@@ -17,7 +17,7 @@ NSUInteger const YTLoremIpsumThumbnailHeight = 80;
 
 + (CGSize)imageSize
 {
-	
+	return CGSizeMake(YTLoremIpsumFullImageWidth, YTLoremIpsumFullImageHeight);
 }
 
 - (UIImage*)thumbnail
@@ -30,6 +30,18 @@ NSUInteger const YTLoremIpsumThumbnailHeight = 80;
 	UIGraphicsEndImageContext();
 	
 	return thumbnail;
+}
+
+- (void)setImage:(UIImage *)image
+{
+	_image = image;
+	[_delegate loremIpsumImageDidFinishDownloading];
+}
+
+- (void)setText:(NSDictionary *)text
+{
+	_text = text;
+	[_delegate loremIpsumTextDidFinishDownloading];
 }
 
 @end

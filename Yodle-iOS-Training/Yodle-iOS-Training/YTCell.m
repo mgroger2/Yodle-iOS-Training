@@ -18,11 +18,30 @@
 
 @implementation YTCell
 
-- (void)configureDataStructure:(YTLoremIpsum*)dataStructure
+- (instancetype)init
 {
-	self.thumbnail.image = dataStructure.image;
-	self.titleLabel.text = dataStructure.title;
-	self.descriptionLabel.text = dataStructure.body;
+	if (self = [super init]) {
+		_loremIpsum = [[YTLoremIpsum alloc] init];
+	}
+	return self;
+}
+
+- (void)configureIsLoading
+{
+	self.thumbnail.image = [UIImage imageNamed:@"loadingImage.png"];
+	self.titleLabel.text = @"Loading...";
+	self.descriptionLabel.text = @"";
+}
+
+- (void)loremIpsumImageDidFinishDownloading
+{
+	self.thumbnail.image = self.loremIpsum.thumbnail;
+}
+
+- (void)loremIpsumTextDidFinishDownloading
+{
+	self.titleLabel.text = self.loremIpsum.text[@"title"];
+	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
 }
 
 @end

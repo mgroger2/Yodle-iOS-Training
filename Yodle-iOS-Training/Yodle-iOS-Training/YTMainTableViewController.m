@@ -8,8 +8,12 @@
 
 #import "YTMainTableViewController.h"
 #import "YTCell.h"
+#import "YTAPIService.h"
+#import "YTImageDetailViewController.h"
 
 @interface YTMainTableViewController ()
+
+@property (strong, nonatomic) YTAPIService* apiService;
 
 @end
 
@@ -19,7 +23,7 @@
 {
     [super viewDidLoad];
     
-	
+	self.apiService = [[YTAPIService alloc] init];
 }
 
 #pragma mark - Table view data source
@@ -31,15 +35,21 @@
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 30;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     YTCell* cell = [tableView dequeueReusableCellWithIdentifier:[YTCell description] forIndexPath:indexPath];
 	
+	[self.apiService fetchImageWithSize:[YTLoremIpsum imageSize] completion:^(UIImage* image) {
+		cell.loremIpsum.image = image;
+	}];
 	
-    
+	[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
+		cell.loremIpsum.text = dictionary;
+	}];
+	
     return cell;
 }
 
@@ -47,7 +57,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 {
-	
+	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
+		YTImageDetailViewController* destination = segue.destinationViewController;
+		[destination configureLoremIpsum:((YTCell*)sender).loremIpsum];
+	}
 }
 
 @end
