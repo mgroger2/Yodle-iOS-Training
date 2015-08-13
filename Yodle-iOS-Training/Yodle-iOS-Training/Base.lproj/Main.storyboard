@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yuC-bp-BQs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -18,22 +19,41 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ID-QB-xuo" id="Ej7-cz-ifr">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-vG-NsC">
-                                            <rect key="frame" x="96" y="10" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-vG-NsC" userLabel="Title">
+                                            <rect key="frame" x="96" y="10" width="463" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="3wQ-VC-zjE"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-Y0-z5u">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-Y0-z5u">
                                             <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="C0d-Gt-AE8"/>
+                                                <constraint firstAttribute="width" constant="80" id="wc8-ae-igB"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIP-5M-IN2">
-                                            <rect key="frame" x="96" y="39" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIP-5M-IN2" userLabel="Description">
+                                            <rect key="frame" x="96" y="39" width="463" height="51"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ofh-Y0-z5u" secondAttribute="bottom" constant="2" id="5TF-Us-SXH"/>
+                                        <constraint firstItem="aPJ-vG-NsC" firstAttribute="top" secondItem="ofh-Y0-z5u" secondAttribute="top" id="R2H-5k-6E9"/>
+                                        <constraint firstItem="wIP-5M-IN2" firstAttribute="top" secondItem="aPJ-vG-NsC" secondAttribute="bottom" constant="8" id="SSI-sc-CzO"/>
+                                        <constraint firstItem="wIP-5M-IN2" firstAttribute="bottom" secondItem="ofh-Y0-z5u" secondAttribute="bottom" id="Y8h-9A-piA"/>
+                                        <constraint firstItem="ofh-Y0-z5u" firstAttribute="top" secondItem="Ej7-cz-ifr" secondAttribute="topMargin" constant="2" id="cpZ-aj-Csq"/>
+                                        <constraint firstItem="aPJ-vG-NsC" firstAttribute="leading" secondItem="ofh-Y0-z5u" secondAttribute="trailing" constant="8" id="d8o-lc-lXy"/>
+                                        <constraint firstItem="aPJ-vG-NsC" firstAttribute="leading" secondItem="wIP-5M-IN2" secondAttribute="leading" id="oju-29-6PP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="aPJ-vG-NsC" secondAttribute="trailing" id="sIb-xK-RWr"/>
+                                        <constraint firstItem="aPJ-vG-NsC" firstAttribute="trailing" secondItem="wIP-5M-IN2" secondAttribute="trailing" id="sdZ-NE-PQC"/>
+                                        <constraint firstItem="ofh-Y0-z5u" firstAttribute="leading" secondItem="Ej7-cz-ifr" secondAttribute="leadingMargin" id="vUH-ji-VhX"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
