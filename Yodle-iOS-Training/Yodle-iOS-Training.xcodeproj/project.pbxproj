@@ -14,6 +14,7 @@
 		43192A4A1B7CEBF300943B6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43192A481B7CEBF300943B6C /* LaunchScreen.xib */; };
 		43192A561B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */; };
 		43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A611B7CEC9C00943B6C /* MyTableViewController.m */; };
+		43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A651B7CECE900943B6C /* MyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		43192A551B7CEBF300943B6C /* Yodle_iOS_TrainingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yodle_iOS_TrainingTests.m; sourceTree = "<group>"; };
 		43192A601B7CEC9C00943B6C /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		43192A611B7CEC9C00943B6C /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		43192A641B7CECE900943B6C /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		43192A651B7CECE900943B6C /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +84,8 @@
 		43192A381B7CEBF300943B6C /* Yodle-iOS-Training */ = {
 			isa = PBXGroup;
 			children = (
-				43192A5F1B7CEC8500943B6C /* New Group */,
+				43192A631B7CECD400943B6C /* View */,
+				43192A5F1B7CEC8500943B6C /* Controller */,
 				43192A3D1B7CEBF300943B6C /* AppDelegate.h */,
 				43192A3E1B7CEBF300943B6C /* AppDelegate.m */,
 				43192A431B7CEBF300943B6C /* Main.storyboard */,
@@ -118,13 +122,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		43192A5F1B7CEC8500943B6C /* New Group */ = {
+		43192A5F1B7CEC8500943B6C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				43192A601B7CEC9C00943B6C /* MyTableViewController.h */,
 				43192A611B7CEC9C00943B6C /* MyTableViewController.m */,
 			);
-			name = "New Group";
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		43192A631B7CECD400943B6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43192A641B7CECE900943B6C /* MyTableViewCell.h */,
+				43192A651B7CECE900943B6C /* MyTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43192A621B7CEC9C00943B6C /* MyTableViewController.m in Sources */,
+				43192A661B7CECE900943B6C /* MyTableViewCell.m in Sources */,
 				43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */,
 				43192A3C1B7CEBF300943B6C /* main.m in Sources */,
 			);
