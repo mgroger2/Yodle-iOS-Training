@@ -55,6 +55,11 @@
                                         <constraint firstItem="ofh-Y0-z5u" firstAttribute="leading" secondItem="Ej7-cz-ifr" secondAttribute="leadingMargin" id="vUH-ji-VhX"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="wIP-5M-IN2" id="Smn-i2-pZS"/>
+                                    <outlet property="thumbnail" destination="ofh-Y0-z5u" id="eOX-9t-Nfb"/>
+                                    <outlet property="titleLabel" destination="aPJ-vG-NsC" id="dj0-Q9-Ogx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
