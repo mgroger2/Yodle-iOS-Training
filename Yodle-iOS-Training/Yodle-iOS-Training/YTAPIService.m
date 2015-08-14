@@ -8,6 +8,7 @@
 
 #import "YTAPIService.h"
 #import "NSNumber+Random.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
 NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://loripsum.net/api/1/short/headers/plaintext";
