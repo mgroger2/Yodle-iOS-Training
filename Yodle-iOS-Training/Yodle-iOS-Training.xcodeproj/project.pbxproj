@@ -20,6 +20,7 @@
 		43192A721B7D027000943B6C /* YTLoremIpsumService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A711B7D027000943B6C /* YTLoremIpsumService.m */; };
 		43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */; };
 		43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A811B7D251300943B6C /* NSNumber+Random.m */; };
+		538E2C2052C3DD2FD107AE0B /* libPods-Yodle-iOS-Training.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22473E347B502C6954570FBC /* Pods-Yodle-iOS-Training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodle-iOS-Training.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training.release.xcconfig"; sourceTree = "<group>"; };
 		43192A361B7CEBF300943B6C /* Yodle-iOS-Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yodle-iOS-Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43192A3A1B7CEBF300943B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43192A3B1B7CEBF300943B6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		43192A7F1B7D1A9500943B6C /* YTLoremIpsumDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsumDelegate.h; sourceTree = "<group>"; };
 		43192A801B7D251300943B6C /* NSNumber+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Random.h"; sourceTree = "<group>"; };
 		43192A811B7D251300943B6C /* NSNumber+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Random.m"; sourceTree = "<group>"; };
+		9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yodle-iOS-Training.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFD5BA96B66A9CD00307A50C /* Pods-Yodle-iOS-Training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodle-iOS-Training.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538E2C2052C3DD2FD107AE0B /* libPods-Yodle-iOS-Training.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				43192A381B7CEBF300943B6C /* Yodle-iOS-Training */,
 				43192A521B7CEBF300943B6C /* Yodle-iOS-TrainingTests */,
 				43192A371B7CEBF300943B6C /* Products */,
+				93503E4F4B693C1B1E16DE45 /* Pods */,
+				BE26375D080F13562231FBFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +238,23 @@
 			name = Protocol;
 			sourceTree = "<group>";
 		};
+		93503E4F4B693C1B1E16DE45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EFD5BA96B66A9CD00307A50C /* Pods-Yodle-iOS-Training.debug.xcconfig */,
+				22473E347B502C6954570FBC /* Pods-Yodle-iOS-Training.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE26375D080F13562231FBFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43192A591B7CEBF400943B6C /* Build configuration list for PBXNativeTarget "Yodle-iOS-Training" */;
 			buildPhases = (
+				FE669A649BA4CE285C4D2CBE /* Check Pods Manifest.lock */,
 				43192A321B7CEBF300943B6C /* Sources */,
 				43192A331B7CEBF300943B6C /* Frameworks */,
 				43192A341B7CEBF300943B6C /* Resources */,
+				E186C90E93FD1622E775DE7E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,6 +351,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E186C90E93FD1622E775DE7E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE669A649BA4CE285C4D2CBE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43192A321B7CEBF300943B6C /* Sources */ = {
@@ -463,6 +522,7 @@
 		};
 		43192A5A1B7CEBF400943B6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFD5BA96B66A9CD00307A50C /* Pods-Yodle-iOS-Training.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Yodle-iOS-Training/Info.plist";
@@ -473,6 +533,7 @@
 		};
 		43192A5B1B7CEBF400943B6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22473E347B502C6954570FBC /* Pods-Yodle-iOS-Training.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Yodle-iOS-Training/Info.plist";
@@ -534,6 +595,7 @@
 				43192A5B1B7CEBF400943B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43192A5C1B7CEBF400943B6C /* Build configuration list for PBXNativeTarget "Yodle-iOS-TrainingTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +604,7 @@
 				43192A5E1B7CEBF400943B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
