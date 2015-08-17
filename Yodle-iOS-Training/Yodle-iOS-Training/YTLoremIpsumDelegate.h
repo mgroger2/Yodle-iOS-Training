@@ -10,7 +10,7 @@
 
 @protocol YTLoremIpsumDelegate <NSObject>
 
-- (void)loremIpsumImageDidFinishDownloading;
-- (void)loremIpsumTextDidFinishDownloading;
+//- (void)loremIpsumImageDidFinishDownloading;
+//- (void)loremIpsumTextDidFinishDownloading;
 
 @end

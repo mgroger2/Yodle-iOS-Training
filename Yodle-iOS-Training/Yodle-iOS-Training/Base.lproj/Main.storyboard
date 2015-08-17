@@ -122,6 +122,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="titleButtonPressed:" destination="dme-xt-I75" eventType="touchUpInside" id="zwI-SG-JfV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,7 +151,9 @@
                         <outlet property="imageDetail" destination="6li-TM-uaG" id="RO4-dX-Pcw"/>
                         <outlet property="imageHeightConstraint" destination="OAb-R5-lRF" id="xIw-FO-qfZ"/>
                         <outlet property="imageWidthConstraint" destination="nln-vJ-xtJ" id="SGv-3w-F4X"/>
+                        <outlet property="titleButton" destination="m83-sp-WjV" id="yDC-mW-E9E"/>
                         <outlet property="titleLabel" destination="iWm-J2-t31" id="Wd6-0h-XY8"/>
+                        <outlet property="titleTextField" destination="Vx7-MQ-bVm" id="gVo-px-VHs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec5-mN-2I7" userLabel="First Responder" sceneMemberID="firstResponder"/>

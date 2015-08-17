@@ -32,8 +32,7 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerTitleButtonMode) {
 	[self changeImage:self.loremIpsum.image];
 	self.titleLabel.text = self.loremIpsum.text[@"title"];
 	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
-	self.titleButton.tag = YTImageDetailViewControllerTitleButtonModeEdit;
-	
+	[self styleTitleButton:YTImageDetailViewControllerTitleButtonModeEdit];
 }
 
 - (void)changeImage:(UIImage*)image
@@ -70,8 +69,9 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerTitleButtonMode) {
 			self.titleButton.tag = YTImageDetailViewControllerTitleButtonModeSave;
 			self.titleButton.backgroundColor = [UIColor greenColor];
 			[self.titleButton setTitle:@"Save" forState:UIControlStateNormal];
-			self.titleTextField.hidden = YES;
-			self.titleLabel.hidden = NO;
+			self.titleTextField.hidden = NO;
+			self.titleLabel.hidden = YES;
+			[self setEditing:NO];
 			break;
 	}
 	

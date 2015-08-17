@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "YTLoremIpsum.h"
+#import "YTCell.h"
 
 @interface YTAPIService : NSObject
 
-- (void)fetchImageWithMaxSize:(CGSize)size completion:(void(^)(UIImage*))completion;
+- (void)fetchImageWithMaxSize:(CGSize)size cell:(YTCell*)cell;
 - (void)fetchLoremIpsumTextWithCompletion:(void(^)(NSDictionary*))completion;
 
 @end

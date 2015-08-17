@@ -22,14 +22,13 @@
 {
 	_loremIpsum = [[YTLoremIpsum alloc] init];
 	
-	self.thumbnail.image = [UIImage imageNamed:@"loadingImage.png"];
 	self.titleLabel.text = @"Loading...";
 	self.descriptionLabel.text = @"";
 }
 
 - (void)loremIpsumImageDidFinishDownloading
 {
-	self.thumbnail.image = self.loremIpsum.thumbnail;
+	self.imageView.image = self.loremIpsum.image;
 }
 
 - (void)loremIpsumTextDidFinishDownloading

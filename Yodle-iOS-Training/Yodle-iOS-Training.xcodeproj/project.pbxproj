@@ -19,6 +19,7 @@
 		43192A6E1B7CF4C400943B6C /* YTLoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */; };
 		43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */; };
 		43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A811B7D251300943B6C /* NSNumber+Random.m */; };
+		436944B01B82849A0078B7F3 /* Char Yawning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 436944AF1B82849A0078B7F3 /* Char Yawning.jpg */; };
 		538E2C2052C3DD2FD107AE0B /* libPods-Yodle-iOS-Training.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		43192A801B7D251300943B6C /* NSNumber+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Random.h"; sourceTree = "<group>"; };
 		43192A811B7D251300943B6C /* NSNumber+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Random.m"; sourceTree = "<group>"; };
 		436944AC1B8277620078B7F3 /* YTMurrayDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTMurrayDetailDelegate.h; sourceTree = "<group>"; };
+		436944AF1B82849A0078B7F3 /* Char Yawning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Char Yawning.jpg"; sourceTree = "<group>"; };
 		9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yodle-iOS-Training.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD5BA96B66A9CD00307A50C /* Pods-Yodle-iOS-Training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodle-iOS-Training.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,8 +161,8 @@
 		43192A631B7CECD400943B6C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				43192A641B7CECE900943B6C /* YTCell.h */,
-				43192A651B7CECE900943B6C /* YTCell.m */,
+				436944AE1B8284880078B7F3 /* Placeholder */,
+				436944AD1B8284820078B7F3 /* Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -225,6 +227,23 @@
 				436944AC1B8277620078B7F3 /* YTMurrayDetailDelegate.h */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		436944AD1B8284820078B7F3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43192A641B7CECE900943B6C /* YTCell.h */,
+				43192A651B7CECE900943B6C /* YTCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		436944AE1B8284880078B7F3 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				436944AF1B82849A0078B7F3 /* Char Yawning.jpg */,
+			);
+			name = Placeholder;
 			sourceTree = "<group>";
 		};
 		93503E4F4B693C1B1E16DE45 /* Pods */ = {
@@ -328,6 +347,7 @@
 			files = (
 				43192A451B7CEBF300943B6C /* Main.storyboard in Resources */,
 				43192A4A1B7CEBF300943B6C /* LaunchScreen.xib in Resources */,
+				436944B01B82849A0078B7F3 /* Char Yawning.jpg in Resources */,
 				43192A471B7CEBF300943B6C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

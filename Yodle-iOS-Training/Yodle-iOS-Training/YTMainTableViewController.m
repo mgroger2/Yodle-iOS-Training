@@ -45,9 +45,7 @@
 	if (!cell.loremIpsum) {
 		[cell initialSetup];
 		
-		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] completion:^(UIImage* image) {
-			cell.loremIpsum.image = image;
-		}];
+		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] cell:cell];
 		
 		[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
 			cell.loremIpsum.text = dictionary;

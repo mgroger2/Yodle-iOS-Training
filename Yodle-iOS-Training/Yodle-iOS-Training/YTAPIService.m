@@ -20,22 +20,14 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 
 @implementation YTAPIService
 
-- (void)fetchImageWithMaxSize:(CGSize)size completion:(void(^)(UIImage*))completion
+- (void)fetchImageWithMaxSize:(CGSize)size cell:(YTCell*)cell
 {
 	CGSize randomSize = [self getRandomSizeWithMaxSize:size];
 	NSString* imageAPI = [NSString stringWithFormat:@"%@/%.0f/%.0f", YTAPIServiceImageBaseUrl, randomSize.width, randomSize.height];
 	
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSURL* imageURL = [NSURL URLWithString:imageAPI];
-        NSData* imageData = [NSData dataWithContentsOfURL:imageURL];
-					   
-        //This is the completion handler
-        dispatch_sync(dispatch_get_main_queue(), ^{
-			if (completion) {
-				completion([UIImage imageWithData:imageData]);
-			}
-		});
-	});
+	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageAPI] placeholderImage:[UIImage imageNamed:@"Char Yawning.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+		cell.loremIpsum.image = image;
+	}];
 }
 
 - (void)fetchLoremIpsumTextWithCompletion:(void(^)(NSDictionary*))completion
