@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "YTLoremIpsum.h"
+#import "YTMurrayDetailDelegate.h"
 
 @interface YTImageDetailViewController : UIViewController
 
+@property (weak, nonatomic) id<YTMurrayDetailDelegate> delegate;
 @property (strong, nonatomic) YTLoremIpsum* loremIpsum;
+@property (strong, nonatomic) NSIndexPath* indexPath;
 
 @end

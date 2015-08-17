@@ -52,9 +52,20 @@
 		[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
 			cell.loremIpsum.text = dictionary;
 		}];
+		
+		cell.loremIpsum.indexPath = indexPath;
 	}
 	
     return cell;
+}
+
+#pragma mark - Murray Detail Delegate
+
+- (void)didChangeDetail:(YTLoremIpsum*)newLoremIpsum
+{
+	YTCell* updatedCell = (YTCell*)[self.tableView cellForRowAtIndexPath:newLoremIpsum.indexPath];
+	updatedCell.loremIpsum = newLoremIpsum;
+	[self.tableView reloadData];
 }
 
 #pragma mark - Navigation
@@ -64,6 +75,8 @@
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
 		destination.loremIpsum = ((YTCell*)sender).loremIpsum;
+		destination.delegate = self;
+		
 	}
 }
 

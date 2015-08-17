@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) NSDictionary* text;
-@property (weak, nonatomic) id<YTLoremIpsumDelegate> delegate;
+@property (strong, nonatomic) NSIndexPath* indexPath;
 
 + (CGSize)maxImageSize;
 - (UIImage*)thumbnail;

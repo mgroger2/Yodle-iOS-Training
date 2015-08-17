@@ -37,13 +37,11 @@ NSUInteger const YTLoremIpsumThumbnailHeight = 80;
 - (void)setImage:(UIImage*)image
 {
 	_image = image;
-	[_delegate loremIpsumImageDidFinishDownloading];
 }
 
 - (void)setText:(NSDictionary*)text
 {
 	_text = text;
-	[_delegate loremIpsumTextDidFinishDownloading];
 }
 
 @end

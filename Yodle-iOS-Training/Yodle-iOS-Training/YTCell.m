@@ -21,7 +21,6 @@
 - (void)initialSetup
 {
 	_loremIpsum = [[YTLoremIpsum alloc] init];
-	_loremIpsum.delegate = self;
 	
 	self.thumbnail.image = [UIImage imageNamed:@"loadingImage.png"];
 	self.titleLabel.text = @"Loading...";

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTMurrayDetailDelegate.h"
 
-@interface YTMainTableViewController : UITableViewController
+@interface YTMainTableViewController : UITableViewController <YTMurrayDetailDelegate>
 
 @end
