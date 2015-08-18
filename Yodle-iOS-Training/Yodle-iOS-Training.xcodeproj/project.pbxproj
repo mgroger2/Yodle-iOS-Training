@@ -56,7 +56,6 @@
 		43192A6D1B7CF4C400943B6C /* YTLoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoremIpsum.m; sourceTree = "<group>"; };
 		43192A7B1B7D04D500943B6C /* YTImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTImageDetailViewController.h; sourceTree = "<group>"; };
 		43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTImageDetailViewController.m; sourceTree = "<group>"; };
-		43192A7F1B7D1A9500943B6C /* YTLoremIpsumDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoremIpsumDelegate.h; sourceTree = "<group>"; };
 		43192A801B7D251300943B6C /* NSNumber+Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Random.h"; sourceTree = "<group>"; };
 		43192A811B7D251300943B6C /* NSNumber+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Random.m"; sourceTree = "<group>"; };
 		436944AC1B8277620078B7F3 /* YTMurrayDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTMurrayDetailDelegate.h; sourceTree = "<group>"; };
@@ -223,7 +222,6 @@
 		43192A7E1B7D1A6C00943B6C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				43192A7F1B7D1A9500943B6C /* YTLoremIpsumDelegate.h */,
 				436944AC1B8277620078B7F3 /* YTMurrayDetailDelegate.h */,
 			);
 			name = Protocol;

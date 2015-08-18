@@ -13,6 +13,6 @@
 @interface YTAPIService : NSObject
 
 - (void)fetchImageWithMaxSize:(CGSize)size cell:(YTCell*)cell;
-- (void)fetchLoremIpsumTextWithCompletion:(void(^)(NSDictionary*))completion;
+- (void)fetchLoremIpsumTextForCell:(YTCell*)cell;
 
 @end

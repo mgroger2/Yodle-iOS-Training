@@ -9,6 +9,7 @@
 #import "YTAPIService.h"
 #import "NSNumber+Random.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking/AFNetworking.h>
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
 NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://loripsum.net/api/1/short/headers/plaintext";
@@ -30,7 +31,7 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 	}];
 }
 
-- (void)fetchLoremIpsumTextWithCompletion:(void(^)(NSDictionary*))completion
+- (void)fetchLoremIpsumTextForCell:(YTCell*)cell
 {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		NSURL* textURL = [NSURL URLWithString:YTAPIServiceLoremIpsumTextBaseUrl];
@@ -38,16 +39,7 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 		
 		//This is the completion handler
 		dispatch_sync(dispatch_get_main_queue(), ^{
-			if (completion) {
-				NSString* successString = [[NSString alloc] initWithData:textData encoding:NSUTF8StringEncoding];
-				successString = [successString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-				NSArray* successArray = [successString componentsSeparatedByString: @"\n\n"];
-				NSDictionary* successDictionary = @{
-				  @"title":[successArray firstObject],
-				  @"body":[successArray lastObject]
-				};
-				completion(successDictionary);
-			}
+			[cell configureLoremIpsumText:[self dictionaryForTextResponse:textData]];
 		});
 	});
 }
@@ -60,6 +52,19 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 	NSNumber* height = [[NSNumber alloc] initWithInteger:[NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:maxSize.height]];
 	
 	return CGSizeMake([width integerValue], [height integerValue]);
+}
+
+- (NSDictionary*)dictionaryForTextResponse:(NSData*)responseData
+{
+	NSString* successString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+	successString = [successString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	NSArray* successArray = [successString componentsSeparatedByString: @"\n\n"];
+	NSDictionary* successDictionary = @{
+		@"title":[successArray firstObject],
+		@"body":[successArray lastObject]
+	};
+	
+	return successDictionary;
 }
 
 @end

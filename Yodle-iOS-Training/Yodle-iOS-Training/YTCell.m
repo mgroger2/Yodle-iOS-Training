@@ -26,15 +26,12 @@
 	self.descriptionLabel.text = @"";
 }
 
-- (void)loremIpsumImageDidFinishDownloading
+- (void)configureLoremIpsumText:(NSDictionary *)dictionary
 {
-	self.imageView.image = self.loremIpsum.image;
-}
-
-- (void)loremIpsumTextDidFinishDownloading
-{
-	self.titleLabel.text = self.loremIpsum.text[@"title"];
-	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
+	self.titleLabel.text = dictionary[@"title"];
+	self.descriptionLabel.text = dictionary[@"body"];
+	
+	self.loremIpsum.text = dictionary;
 }
 
 @end

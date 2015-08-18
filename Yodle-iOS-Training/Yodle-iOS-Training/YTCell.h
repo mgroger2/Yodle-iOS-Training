@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "YTLoremIpsum.h"
-#import "YTLoremIpsumDelegate.h"
 
-@interface YTCell : UITableViewCell <YTLoremIpsumDelegate>
+@interface YTCell : UITableViewCell
 
 @property (strong, nonatomic) YTLoremIpsum* loremIpsum;
 
 - (void)initialSetup;
+- (void)configureLoremIpsumText:(NSDictionary*)dictionary;
 
 @end

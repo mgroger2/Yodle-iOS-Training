@@ -20,9 +20,9 @@
 
 @end
 
-typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerTitleButtonMode) {
-	YTImageDetailViewControllerTitleButtonModeEdit,
-	YTImageDetailViewControllerTitleButtonModeSave
+typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
+	YTImageDetailViewControllerEditingMode,
+	YTImageDetailViewControllerDisplayingMode
 };
 
 @implementation YTImageDetailViewController
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerTitleButtonMode) {
 	[self changeImage:self.loremIpsum.image];
 	self.titleLabel.text = self.loremIpsum.text[@"title"];
 	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
-	[self styleTitleButton:YTImageDetailViewControllerTitleButtonModeEdit];
+	[self styleForm:YTImageDetailViewControllerDisplayingMode];
 }
 
 - (void)changeImage:(UIImage*)image
@@ -45,38 +45,77 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerTitleButtonMode) {
 - (IBAction)titleButtonPressed:(UIButton*)sender
 {
 	switch (sender.tag) {
-		case YTImageDetailViewControllerTitleButtonModeEdit:
-			[self styleTitleButton:YTImageDetailViewControllerTitleButtonModeSave];
+		case YTImageDetailViewControllerDisplayingMode:
+			[self styleForm:YTImageDetailViewControllerEditingMode];
 			break;
-		case YTImageDetailViewControllerTitleButtonModeSave:
-			[self styleTitleButton:YTImageDetailViewControllerTitleButtonModeEdit];
-			[self.delegate didChangeDetail:self.loremIpsum];
+		case YTImageDetailViewControllerEditingMode:
+			[self styleForm:YTImageDetailViewControllerDisplayingMode];
+			[self setTitle:self.titleTextField.text];
 			break;
 	}
 }
 
-- (void)styleTitleButton:(YTImageDetailViewControllerTitleButtonMode)mode
+- (void)styleForm:(YTImageDetailViewControllerMode)mode
+{
+	[self styleTitleButton:mode];
+	[self styleTitleLabel:mode];
+	[self styleTitleTextfield:mode];
+}
+
+- (void)styleTitleButton:(YTImageDetailViewControllerMode)mode
 {
 	switch (mode) {
-		case YTImageDetailViewControllerTitleButtonModeEdit:
-			self.titleButton.tag = YTImageDetailViewControllerTitleButtonModeEdit;
+		case YTImageDetailViewControllerDisplayingMode:
+			self.titleButton.tag = YTImageDetailViewControllerDisplayingMode;
 			self.titleButton.backgroundColor = [UIColor cyanColor];
 			[self.titleButton setTitle:@"Edit" forState:UIControlStateNormal];
-			self.titleTextField.hidden = YES;
-			self.titleLabel.hidden = NO;
 			break;
-		case YTImageDetailViewControllerTitleButtonModeSave:
-			self.titleButton.tag = YTImageDetailViewControllerTitleButtonModeSave;
+		case YTImageDetailViewControllerEditingMode:
+			self.titleButton.tag = YTImageDetailViewControllerEditingMode;
 			self.titleButton.backgroundColor = [UIColor greenColor];
 			[self.titleButton setTitle:@"Save" forState:UIControlStateNormal];
-			self.titleTextField.hidden = NO;
-			self.titleLabel.hidden = YES;
-			[self setEditing:NO];
 			break;
 	}
 	
 	self.titleButton.titleLabel.textColor = [UIColor whiteColor];
-	self.titleLabel.text = self.loremIpsum.text[@"title"];
+}
+
+- (void)styleTitleTextfield:(YTImageDetailViewControllerMode)mode
+{
+	switch (mode) {
+		case YTImageDetailViewControllerDisplayingMode:
+			self.titleTextField.hidden = YES;
+			[self setEditing:NO];
+			break;
+		case YTImageDetailViewControllerEditingMode:
+			self.titleTextField.hidden = NO;
+			self.titleTextField.text = @"";
+			break;
+	}
+}
+
+- (void)styleTitleLabel:(YTImageDetailViewControllerMode)mode
+{
+	switch (mode) {
+		case YTImageDetailViewControllerDisplayingMode:
+			self.titleLabel.hidden = NO;
+			break;
+		case YTImageDetailViewControllerEditingMode:
+			self.titleLabel.hidden = YES;
+			break;
+	}
+}
+
+- (void)setTitle:(NSString*)newTitle
+{
+	NSDictionary* newDictionary = @{
+		@"title":newTitle,
+		@"body":self.loremIpsum.text[@"body"]
+	};
+	
+	self.loremIpsum.text = newDictionary;
+	self.titleLabel.text = newDictionary[@"title"];
+	[self.delegate didChangeDetail:self.loremIpsum];
 }
 
 @end

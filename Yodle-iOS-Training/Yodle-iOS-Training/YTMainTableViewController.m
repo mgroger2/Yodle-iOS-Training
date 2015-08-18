@@ -47,9 +47,7 @@
 		
 		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] cell:cell];
 		
-		[self.apiService fetchLoremIpsumTextWithCompletion:^(NSDictionary* dictionary) {
-			cell.loremIpsum.text = dictionary;
-		}];
+		[self.apiService fetchLoremIpsumTextForCell:cell];
 		
 		cell.loremIpsum.indexPath = indexPath;
 	}
