@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "366B9692D0D2B08E34962F21"
+               BlueprintIdentifier = "8908A32497DD7FA13208AC75"
                BuildableName = "libPods-Yodle-iOS-Training.a"
                BlueprintName = "Pods-Yodle-iOS-Training"
                ReferencedContainer = "container:Pods.xcodeproj">
