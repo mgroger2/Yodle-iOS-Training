@@ -72,7 +72,6 @@
 		YTImageDetailViewController* destination = segue.destinationViewController;
 		destination.loremIpsum = ((YTCell*)sender).loremIpsum;
 		destination.delegate = self;
-		
 	}
 }
 

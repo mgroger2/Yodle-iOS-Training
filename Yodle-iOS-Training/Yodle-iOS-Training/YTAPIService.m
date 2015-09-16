@@ -26,7 +26,7 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 	CGSize randomSize = [self getRandomSizeWithMaxSize:size];
 	NSString* imageAPI = [NSString stringWithFormat:@"%@/%.0f/%.0f", YTAPIServiceImageBaseUrl, randomSize.width, randomSize.height];
 	
-	[cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageAPI] placeholderImage:[UIImage imageNamed:@"Char Yawning.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+	[cell.thumbnail sd_setImageWithURL:[NSURL URLWithString:imageAPI] placeholderImage:[UIImage imageNamed:@"Char Yawning.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 		cell.loremIpsum.image = image;
 	}];
 }

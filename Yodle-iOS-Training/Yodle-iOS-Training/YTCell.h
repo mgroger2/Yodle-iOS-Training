@@ -12,6 +12,7 @@
 @interface YTCell : UITableViewCell
 
 @property (strong, nonatomic) YTLoremIpsum* loremIpsum;
+@property (weak, nonatomic) IBOutlet UIImageView* thumbnail;
 
 - (void)initialSetup;
 - (void)configureLoremIpsumText:(NSDictionary*)dictionary;
