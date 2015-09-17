@@ -10,7 +10,7 @@
 #import "YTLoremIpsum.h"
 #import "YTMurrayDetailDelegate.h"
 
-@interface YTImageDetailViewController : UIViewController
+@interface YTImageDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id<YTMurrayDetailDelegate> delegate;
 @property (strong, nonatomic) YTLoremIpsum* loremIpsum;

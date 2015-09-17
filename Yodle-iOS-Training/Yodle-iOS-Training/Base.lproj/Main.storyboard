@@ -86,71 +86,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6li-TM-uaG">
-                                <rect key="frame" x="150" y="65" width="300" height="300"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-Ti-TeX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6li-TM-uaG">
+                                        <rect key="frame" x="150" y="10" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="OAb-R5-lRF"/>
+                                            <constraint firstAttribute="width" constant="300" id="nln-vJ-xtJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
+                                        <rect key="frame" x="8" y="320" width="36" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="iuu-Iw-dnf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-MQ-bVm">
+                                        <rect key="frame" x="8" y="320" width="36" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m83-sp-WjV">
+                                        <rect key="frame" x="52" y="320" width="70" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="8RS-yx-v6E"/>
+                                            <constraint firstAttribute="height" constant="42" id="Kqy-UM-bIE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="titleButtonPressed:" destination="dme-xt-I75" eventType="touchUpInside" id="zwI-SG-JfV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-v1-a54">
+                                        <rect key="frame" x="8" y="372" width="124" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="124" id="PW2-jU-Yif"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="OAb-R5-lRF"/>
-                                    <constraint firstAttribute="width" constant="300" id="nln-vJ-xtJ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="jNh-v1-a54" secondAttribute="trailing" id="3Dp-ep-pU2"/>
+                                    <constraint firstItem="iWm-J2-t31" firstAttribute="top" secondItem="6li-TM-uaG" secondAttribute="bottom" constant="10" id="76S-EJ-Ox0"/>
+                                    <constraint firstItem="jNh-v1-a54" firstAttribute="leading" secondItem="XUX-Ti-TeX" secondAttribute="leadingMargin" id="7ee-hL-HOp"/>
+                                    <constraint firstItem="Vx7-MQ-bVm" firstAttribute="trailing" secondItem="iWm-J2-t31" secondAttribute="trailing" id="AEx-vF-sa7"/>
+                                    <constraint firstItem="m83-sp-WjV" firstAttribute="top" secondItem="iWm-J2-t31" secondAttribute="top" id="BB7-Ow-bGe"/>
+                                    <constraint firstItem="Vx7-MQ-bVm" firstAttribute="bottom" secondItem="iWm-J2-t31" secondAttribute="bottom" id="CnY-Qe-lEJ"/>
+                                    <constraint firstItem="iWm-J2-t31" firstAttribute="leading" secondItem="XUX-Ti-TeX" secondAttribute="leadingMargin" id="Dp5-Bd-do0"/>
+                                    <constraint firstItem="Vx7-MQ-bVm" firstAttribute="leading" secondItem="iWm-J2-t31" secondAttribute="leading" id="Gwm-r6-AEg"/>
+                                    <constraint firstAttribute="bottom" secondItem="jNh-v1-a54" secondAttribute="bottom" id="KBy-DL-2uT"/>
+                                    <constraint firstItem="Vx7-MQ-bVm" firstAttribute="top" secondItem="iWm-J2-t31" secondAttribute="top" id="QZi-Ar-pGN"/>
+                                    <constraint firstItem="jNh-v1-a54" firstAttribute="top" secondItem="iWm-J2-t31" secondAttribute="bottom" constant="10" id="Qe8-oe-C91"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="m83-sp-WjV" secondAttribute="trailing" constant="10" id="bZu-FX-5z8"/>
+                                    <constraint firstItem="6li-TM-uaG" firstAttribute="top" secondItem="XUX-Ti-TeX" secondAttribute="top" constant="10" id="g3H-QT-Mce"/>
+                                    <constraint firstItem="m83-sp-WjV" firstAttribute="leading" secondItem="iWm-J2-t31" secondAttribute="trailing" constant="8" id="tUN-a8-8jy"/>
+                                    <constraint firstAttribute="centerX" secondItem="6li-TM-uaG" secondAttribute="centerX" id="xpC-aL-Ad7"/>
+                                    <constraint firstItem="Vx7-MQ-bVm" firstAttribute="trailing" secondItem="iWm-J2-t31" secondAttribute="trailing" id="yE1-kB-655"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
-                                <rect key="frame" x="16" y="375" width="490" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="iuu-Iw-dnf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-v1-a54">
-                                <rect key="frame" x="16" y="419" width="568" height="181"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-MQ-bVm">
-                                <rect key="frame" x="16" y="393" width="490" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m83-sp-WjV">
-                                <rect key="frame" x="514" y="375" width="70" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="8RS-yx-v6E"/>
-                                    <constraint firstAttribute="height" constant="42" id="Kqy-UM-bIE"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="titleButtonPressed:" destination="dme-xt-I75" eventType="touchUpInside" id="zwI-SG-JfV"/>
-                                </connections>
-                            </button>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yE1-kB-655"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="trailing" secondItem="Vx7-MQ-bVm" secondAttribute="trailing" id="7aa-aJ-M14"/>
-                            <constraint firstItem="UIC-5t-2Zd" firstAttribute="top" secondItem="jNh-v1-a54" secondAttribute="bottom" id="B7i-tR-SzH"/>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="baseline" secondItem="Vx7-MQ-bVm" secondAttribute="baseline" id="Hgv-uI-5rC"/>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="top" secondItem="m83-sp-WjV" secondAttribute="top" id="Kwx-fk-dNi"/>
-                            <constraint firstAttribute="centerX" secondItem="6li-TM-uaG" secondAttribute="centerX" id="QgL-sG-pJS"/>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="top" secondItem="6li-TM-uaG" secondAttribute="bottom" constant="10" id="Vfa-ja-5rB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m83-sp-WjV" secondAttribute="trailing" id="bJq-sU-kb4"/>
-                            <constraint firstItem="jNh-v1-a54" firstAttribute="top" secondItem="iWm-J2-t31" secondAttribute="bottom" constant="2" id="cY7-Mq-RpC"/>
-                            <constraint firstItem="6li-TM-uaG" firstAttribute="top" secondItem="yCj-lb-IAg" secondAttribute="topMargin" constant="65" id="khr-f6-4Kc"/>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="leading" secondItem="Vx7-MQ-bVm" secondAttribute="leading" id="pAe-rH-cHL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jNh-v1-a54" secondAttribute="trailing" id="pdC-wc-N6H"/>
-                            <constraint firstItem="jNh-v1-a54" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leadingMargin" id="q3t-D8-p1p"/>
-                            <constraint firstItem="m83-sp-WjV" firstAttribute="leading" secondItem="iWm-J2-t31" secondAttribute="trailing" constant="8" id="uvq-lV-BTM"/>
-                            <constraint firstItem="iWm-J2-t31" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leadingMargin" id="vo4-K1-4o9"/>
+                            <constraint firstItem="XUX-Ti-TeX" firstAttribute="leading" secondItem="yCj-lb-IAg" secondAttribute="leading" id="64d-95-VrG"/>
+                            <constraint firstItem="XUX-Ti-TeX" firstAttribute="top" secondItem="yCj-lb-IAg" secondAttribute="top" id="6ht-I8-0ee"/>
+                            <constraint firstAttribute="bottom" secondItem="XUX-Ti-TeX" secondAttribute="bottom" id="Zkv-E4-gwI"/>
+                            <constraint firstAttribute="trailing" secondItem="XUX-Ti-TeX" secondAttribute="trailing" id="fja-FE-26M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail of Murray" id="bBA-FG-Y2p"/>
                     <connections>
+                        <outlet property="bodyLabelWidth" destination="PW2-jU-Yif" id="oCl-3p-xsf"/>
                         <outlet property="descriptionLabel" destination="jNh-v1-a54" id="nfv-kH-vTW"/>
                         <outlet property="imageDetail" destination="6li-TM-uaG" id="RO4-dX-Pcw"/>
                         <outlet property="imageHeightConstraint" destination="OAb-R5-lRF" id="xIw-FO-qfZ"/>
                         <outlet property="imageWidthConstraint" destination="nln-vJ-xtJ" id="SGv-3w-F4X"/>
+                        <outlet property="scrollView" destination="XUX-Ti-TeX" id="vbV-94-bmf"/>
                         <outlet property="titleButton" destination="m83-sp-WjV" id="yDC-mW-E9E"/>
                         <outlet property="titleLabel" destination="iWm-J2-t31" id="Wd6-0h-XY8"/>
                         <outlet property="titleTextField" destination="Vx7-MQ-bVm" id="gVo-px-VHs"/>

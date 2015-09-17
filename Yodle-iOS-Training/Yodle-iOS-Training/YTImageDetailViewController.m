@@ -10,6 +10,7 @@
 
 @interface YTImageDetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView* imageDetail;
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet UITextField* titleTextField;
 @property (weak, nonatomic) IBOutlet UIButton* titleButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* bodyLabelWidth;
 
 @end
 
@@ -33,6 +35,28 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 	self.titleLabel.text = self.loremIpsum.text[@"title"];
 	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
 	[self styleForm:YTImageDetailViewControllerDisplayingMode];
+	self.titleTextField.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self formatLabel];
+}
+
+- (void)formatLabel
+{
+	self.bodyLabelWidth.constant = self.view.frame.size.width - 16;
+	
+	//Calculate the expected size based on the font and linebreak mode of your label
+	// FLT_MAX here simply means no constraint in height
+	CGSize maximumLabelSize = CGSizeMake(self.bodyLabelWidth.constant, FLT_MAX);
+	
+	CGSize expectedSize = [self.descriptionLabel sizeThatFits:maximumLabelSize];
+	
+	//adjust the label the the new height.
+	CGRect newFrame = self.descriptionLabel.frame;
+	newFrame.size.height = expectedSize.height;
+	self.descriptionLabel.frame = newFrame;
 }
 
 - (void)changeImage:(UIImage*)image
@@ -116,6 +140,24 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 	self.loremIpsum.text = newDictionary;
 	self.titleLabel.text = newDictionary[@"title"];
 	[self.delegate didChangeDetail:self.loremIpsum];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+	UIEdgeInsets insets = self.scrollView.contentInset;
+	insets.bottom = 216;
+	self.scrollView.contentInset = insets;
+	self.scrollView.scrollIndicatorInsets = insets;
+}
+
+- (void)textFieldDidEndEditing:(UITextField*)textField
+{
+	UIEdgeInsets insets = self.scrollView.contentInset;
+	insets.bottom = 216;
+	self.scrollView.contentInset = insets;
+	self.scrollView.scrollIndicatorInsets = insets;
 }
 
 @end
