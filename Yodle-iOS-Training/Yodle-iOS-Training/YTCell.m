@@ -7,30 +7,17 @@
 //
 
 #import "YTCell.h"
-
-@interface YTCell ()
-
-@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
-
-@end
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "YTModel+Data.h"
 
 @implementation YTCell
 
-- (void)initialSetup
+- (void)configureWithModel:(YTModel*)model
 {
-	_loremIpsum = [[YTLoremIpsum alloc] init];
+	self.headerLabel.text = model.header;
+	self.bodyLabel.text = model.body;
 	
-	self.titleLabel.text = @"Loading...";
-	self.descriptionLabel.text = @"";
-}
-
-- (void)configureLoremIpsumText:(NSDictionary *)dictionary
-{
-	self.titleLabel.text = dictionary[@"title"];
-	self.descriptionLabel.text = dictionary[@"body"];
-	
-	self.loremIpsum.text = dictionary;
+	[self.thumbnail sd_setImageWithURL:[model randomImageURL]];
 }
 
 @end

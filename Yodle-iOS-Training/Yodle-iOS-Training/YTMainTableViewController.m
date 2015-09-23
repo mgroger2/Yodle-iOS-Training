@@ -11,9 +11,12 @@
 #import "YTAPIService.h"
 #import "YTImageDetailViewController.h"
 
+const NSUInteger YTMainTableViewControllerRowCount = 5;
+
 @interface YTMainTableViewController ()
 
 @property (strong, nonatomic) YTAPIService* apiService;
+@property (strong, nonatomic) NSArray<YTModel*>* models;
 
 @end
 
@@ -22,8 +25,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+	
+	[self.tableView registerClass:[YTCell class] forCellReuseIdentifier:[YTCell description]];
+	
 	self.apiService = [[YTAPIService alloc] init];
+	
+	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerRowCount success:^(NSArray<YTModel*>* models) {
+		self.models = models;
+		[self.tableView reloadData];
+	}];
 }
 
 #pragma mark - Table view data source
@@ -35,22 +45,25 @@
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30;
+	//TODO: Spinner
+    return self.models.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
+    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:[YTCell description] forIndexPath:indexPath];
 	
-	if (!cell.loremIpsum) {
-		[cell initialSetup];
-		
-		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] cell:cell];
-		
-		[self.apiService fetchLoremIpsumTextForCell:cell];
-		
-		cell.loremIpsum.indexPath = indexPath;
-	}
+//	if (!cell.loremIpsum) {
+//		[cell initialSetup];
+//		
+//		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] cell:cell];
+//		
+//		[self.apiService fetchLoremIpsumTextForCell:cell];
+//		
+//		cell.loremIpsum.indexPath = indexPath;
+//	}
+	
+	[cell configureWithModel:self.models[indexPath.row]];
 	
     return cell;
 }

@@ -10,6 +10,7 @@
 #import "NSNumber+Random.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFNetworking.h>
+#import "YTModel+Data.h"
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
 NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://loripsum.net/api/1/short/headers/plaintext";
@@ -21,50 +22,28 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 
 @implementation YTAPIService
 
-- (void)fetchImageWithMaxSize:(CGSize)size cell:(YTCell*)cell
+- (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray<YTModel*>*))success
 {
-	CGSize randomSize = [self getRandomSizeWithMaxSize:size];
-	NSString* imageAPI = [NSString stringWithFormat:@"%@/%.0f/%.0f", YTAPIServiceImageBaseUrl, randomSize.width, randomSize.height];
+	NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:count];
+	NSOperationQueue* currentQueue = [NSOperationQueue currentQueue];
 	
-	[cell.thumbnail sd_setImageWithURL:[NSURL URLWithString:imageAPI] placeholderImage:[UIImage imageNamed:@"Char Yawning.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-		cell.loremIpsum.image = image;
-	}];
-}
-
-- (void)fetchLoremIpsumTextForCell:(YTCell*)cell
-{
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSURL* textURL = [NSURL URLWithString:YTAPIServiceLoremIpsumTextBaseUrl];
-		NSData *textData = [NSData dataWithContentsOfURL:textURL];
+	[[[NSOperationQueue alloc] init] addOperationWithBlock:^{
+		for (int i=0; i<count; i++) {
+			NSURL* textURL = [NSURL URLWithString:YTAPIServiceLoremIpsumTextBaseUrl];
+			NSData *textData = [NSData dataWithContentsOfURL:textURL];
+			
+			YTModel* model = [YTModel modelWithData:textData];
+			model.imageURL = [NSURL URLWithString:YTAPIServiceImageBaseUrl];
+			[array addObject:model];
+		}
 		
-		//This is the completion handler
-		dispatch_sync(dispatch_get_main_queue(), ^{
-			[cell configureLoremIpsumText:[self dictionaryForTextResponse:textData]];
-		});
-	});
-}
-
-#pragma mark - Private
-
-- (CGSize)getRandomSizeWithMaxSize:(CGSize)maxSize
-{
-	NSNumber* width = [[NSNumber alloc] initWithInteger:[NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:maxSize.width]];
-	NSNumber* height = [[NSNumber alloc] initWithInteger:[NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:maxSize.height]];
+		[currentQueue addOperationWithBlock:^{
+			if (success) {
+				success([array copy]);
+			}
+		}];
+	}];
 	
-	return CGSizeMake([width integerValue], [height integerValue]);
-}
-
-- (NSDictionary*)dictionaryForTextResponse:(NSData*)responseData
-{
-	NSString* successString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-	successString = [successString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	NSArray* successArray = [successString componentsSeparatedByString: @"\n\n"];
-	NSDictionary* successDictionary = @{
-		@"title":[successArray firstObject],
-		@"body":[successArray lastObject]
-	};
-	
-	return successDictionary;
 }
 
 @end
