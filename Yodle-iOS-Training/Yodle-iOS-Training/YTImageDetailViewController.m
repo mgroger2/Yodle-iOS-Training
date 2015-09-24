@@ -31,9 +31,8 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 
 - (void)viewDidLoad
 {
-	[self changeImage:self.loremIpsum.image];
-	self.titleLabel.text = self.loremIpsum.text[@"title"];
-	self.descriptionLabel.text = self.loremIpsum.text[@"body"];
+	self.titleLabel.text = self.model.header;
+	self.descriptionLabel.text = self.model.body;
 	[self styleForm:YTImageDetailViewControllerDisplayingMode];
 	self.titleTextField.delegate = self;
 }
@@ -41,6 +40,10 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 - (void)viewWillAppear:(BOOL)animated
 {
 	[self formatLabel];
+	
+	self.imageDetail.image = self.modelImage;
+	self.imageWidthConstraint.constant = self.imageDetail.image.size.width;
+	self.imageHeightConstraint.constant = self.imageDetail.image.size.height;
 }
 
 - (void)formatLabel
@@ -57,13 +60,6 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 	CGRect newFrame = self.descriptionLabel.frame;
 	newFrame.size.height = expectedSize.height;
 	self.descriptionLabel.frame = newFrame;
-}
-
-- (void)changeImage:(UIImage*)image
-{
-	self.imageDetail.image = image;
-	self.imageWidthConstraint.constant = image.size.width;
-	self.imageHeightConstraint.constant = image.size.height;
 }
 
 - (IBAction)titleButtonPressed:(UIButton*)sender
@@ -132,14 +128,9 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 
 - (void)setTitle:(NSString*)newTitle
 {
-	NSDictionary* newDictionary = @{
-		@"title":newTitle,
-		@"body":self.loremIpsum.text[@"body"]
-	};
-	
-	self.loremIpsum.text = newDictionary;
-	self.titleLabel.text = newDictionary[@"title"];
-	[self.delegate didChangeDetail:self.loremIpsum];
+	self.model.header = newTitle;
+	self.titleLabel.text = newTitle;
+	[self.delegate didChangeDetail:self.model];
 }
 
 #pragma mark - UITextFieldDelegate

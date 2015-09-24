@@ -26,8 +26,6 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 {
     [super viewDidLoad];
 	
-//	[self.tableView registerClass:[YTCell class] forCellReuseIdentifier:@"MyReuse"];
-	
 	self.apiService = [[YTAPIService alloc] init];
 	
 	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerRowCount success:^(NSArray<YTModel*>* models) {
@@ -53,16 +51,6 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 {
     YTCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
 	
-//	if (!cell.loremIpsum) {
-//		[cell initialSetup];
-//		
-//		[self.apiService fetchImageWithMaxSize:[YTLoremIpsum maxImageSize] cell:cell];
-//		
-//		[self.apiService fetchLoremIpsumTextForCell:cell];
-//		
-//		cell.loremIpsum.indexPath = indexPath;
-//	}
-	
 	[cell configureWithModel:self.models[indexPath.row]];
 	
     return cell;
@@ -70,10 +58,11 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 
 #pragma mark - Murray Detail Delegate
 
-- (void)didChangeDetail:(YTLoremIpsum*)newLoremIpsum
+- (void)didChangeDetail:(YTModel*)newModel
 {
-	YTCell* updatedCell = (YTCell*)[self.tableView cellForRowAtIndexPath:newLoremIpsum.indexPath];
-	updatedCell.loremIpsum = newLoremIpsum;
+	NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.models indexOfObject:newModel] inSection:0];
+	YTCell* updatedCell = (YTCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+	updatedCell.model = newModel;
 	[self.tableView reloadData];
 }
 
@@ -83,8 +72,9 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 {
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
-		destination.loremIpsum = ((YTCell*)sender).loremIpsum;
+		destination.model = ((YTCell*)sender).model;
 		destination.delegate = self;
+		destination.modelImage = ((YTCell*)sender).thumbnail.image;
 	}
 }
 

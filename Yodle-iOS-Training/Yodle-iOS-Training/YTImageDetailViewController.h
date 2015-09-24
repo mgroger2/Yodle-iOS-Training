@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YTLoremIpsum.h"
+#import "YTModel.h"
 #import "YTMurrayDetailDelegate.h"
 
 @interface YTImageDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id<YTMurrayDetailDelegate> delegate;
-@property (strong, nonatomic) YTLoremIpsum* loremIpsum;
-@property (strong, nonatomic) NSIndexPath* indexPath;
+@property (strong, nonatomic) YTModel* model;
+@property (strong, nonatomic) UIImage* modelImage;
+
+- (void)changeImage:(UIImage*)image;
 
 @end

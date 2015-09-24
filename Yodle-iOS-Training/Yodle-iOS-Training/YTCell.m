@@ -14,10 +14,11 @@
 
 - (void)configureWithModel:(YTModel*)model
 {
+	self.model = model;
 	self.headerLabel.text = model.header;
 	self.bodyLabel.text = model.body;
 	
-	[self.thumbnail sd_setImageWithURL:[model randomImageURL]];
+	[self.thumbnail sd_setImageWithURL:[model randomImageURL] placeholderImage:[UIImage imageNamed:@"Char Floating Head.jpg"]];
 }
 
 @end

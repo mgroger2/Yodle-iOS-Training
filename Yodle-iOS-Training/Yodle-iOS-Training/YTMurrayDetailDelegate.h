@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YTLoremIpsum.h"
+#import "YTModel.h"
 
 @protocol YTMurrayDetailDelegate <NSObject>
 
-- (void)didChangeDetail:(YTLoremIpsum*)newLoremIpsum;
+- (void)didChangeDetail:(YTModel*)newModel;
 
 @end
