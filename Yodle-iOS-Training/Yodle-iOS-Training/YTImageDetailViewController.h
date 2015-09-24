@@ -16,6 +16,4 @@
 @property (strong, nonatomic) YTModel* model;
 @property (strong, nonatomic) UIImage* modelImage;
 
-- (void)changeImage:(UIImage*)image;
-
 @end

@@ -12,12 +12,15 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView* imageDetail;
-@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
-@property (weak, nonatomic) IBOutlet UITextField* titleTextField;
-@property (weak, nonatomic) IBOutlet UIButton* titleButton;
+@property (weak, nonatomic) IBOutlet UIView* titleDisplayView;
+@property (weak, nonatomic) IBOutlet UIButton* titleEditButton;
+@property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+@property (weak, nonatomic) IBOutlet UIView* titleEditView;
+@property (weak, nonatomic) IBOutlet UIButton* titleSaveButton;
+@property (weak, nonatomic) IBOutlet UITextField* titleEditTextield;
+@property (weak, nonatomic) IBOutlet UILabel* descriptionLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* bodyLabelWidth;
 
 @end
@@ -33,8 +36,9 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 {
 	self.titleLabel.text = self.model.header;
 	self.descriptionLabel.text = self.model.body;
-	[self styleForm:YTImageDetailViewControllerDisplayingMode];
-	self.titleTextField.delegate = self;
+	self.titleEditTextield.delegate = self;
+	self.titleEditView.hidden = YES;
+	self.titleDisplayView.hidden = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,68 +66,20 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 	self.descriptionLabel.frame = newFrame;
 }
 
-- (IBAction)titleButtonPressed:(UIButton*)sender
+- (IBAction)titleSaveButtonPressed:(UIButton*)sender
 {
-	switch (sender.tag) {
-		case YTImageDetailViewControllerDisplayingMode:
-			[self styleForm:YTImageDetailViewControllerEditingMode];
-			break;
-		case YTImageDetailViewControllerEditingMode:
-			[self styleForm:YTImageDetailViewControllerDisplayingMode];
-			[self setTitle:self.titleTextField.text];
-			break;
-	}
-}
-
-- (void)styleForm:(YTImageDetailViewControllerMode)mode
-{
-	[self styleTitleButton:mode];
-	[self styleTitleLabel:mode];
-	[self styleTitleTextfield:mode];
-}
-
-- (void)styleTitleButton:(YTImageDetailViewControllerMode)mode
-{
-	switch (mode) {
-		case YTImageDetailViewControllerDisplayingMode:
-			self.titleButton.tag = YTImageDetailViewControllerDisplayingMode;
-			self.titleButton.backgroundColor = [UIColor cyanColor];
-			[self.titleButton setTitle:@"Edit" forState:UIControlStateNormal];
-			break;
-		case YTImageDetailViewControllerEditingMode:
-			self.titleButton.tag = YTImageDetailViewControllerEditingMode;
-			self.titleButton.backgroundColor = [UIColor greenColor];
-			[self.titleButton setTitle:@"Save" forState:UIControlStateNormal];
-			break;
-	}
+	[self setTitle:self.titleEditTextield.text];
 	
-	self.titleButton.titleLabel.textColor = [UIColor whiteColor];
+	self.titleEditView.hidden = YES;
+	self.titleDisplayView.hidden = NO;
 }
 
-- (void)styleTitleTextfield:(YTImageDetailViewControllerMode)mode
+- (IBAction)titleEditButtonPressed:(UIButton*)sender
 {
-	switch (mode) {
-		case YTImageDetailViewControllerDisplayingMode:
-			self.titleTextField.hidden = YES;
-			[self setEditing:NO];
-			break;
-		case YTImageDetailViewControllerEditingMode:
-			self.titleTextField.hidden = NO;
-			self.titleTextField.text = @"";
-			break;
-	}
-}
-
-- (void)styleTitleLabel:(YTImageDetailViewControllerMode)mode
-{
-	switch (mode) {
-		case YTImageDetailViewControllerDisplayingMode:
-			self.titleLabel.hidden = NO;
-			break;
-		case YTImageDetailViewControllerEditingMode:
-			self.titleLabel.hidden = YES;
-			break;
-	}
+	self.titleEditTextield.text = self.titleLabel.text;
+	
+	self.titleEditView.hidden = NO;
+	self.titleDisplayView.hidden = YES;
 }
 
 - (void)setTitle:(NSString*)newTitle

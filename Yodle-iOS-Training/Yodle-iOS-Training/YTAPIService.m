@@ -33,6 +33,12 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 		NSString* urlString = [NSString stringWithFormat:YTAPIServiceLoremIpsumTextBaseUrl, (unsigned long)count, (unsigned long)YTAPIServiceHeaderWordCount, (unsigned long)YTAPIServiceBodyWordCount];
 		NSURL* textURL = [NSURL URLWithString:urlString];
 		NSData *textData = [NSData dataWithContentsOfURL:textURL];
+		
+		if (!textData) {
+			NSLog(@"Failed to download text.");
+			return;
+		}
+		
 		NSArray* arrayOfDictionaries = [NSJSONSerialization JSONObjectWithData:textData options:0 error:nil];
 		
 		for (int i = 0; i < arrayOfDictionaries.count; i++) {
