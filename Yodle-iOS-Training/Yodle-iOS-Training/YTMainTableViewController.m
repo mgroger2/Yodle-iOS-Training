@@ -26,7 +26,7 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 {
     [super viewDidLoad];
 	
-	[self.tableView registerClass:[YTCell class] forCellReuseIdentifier:[YTCell description]];
+//	[self.tableView registerClass:[YTCell class] forCellReuseIdentifier:@"MyReuse"];
 	
 	self.apiService = [[YTAPIService alloc] init];
 	
@@ -51,7 +51,7 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:[YTCell description] forIndexPath:indexPath];
+    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
 	
 //	if (!cell.loremIpsum) {
 //		[cell initialSetup];

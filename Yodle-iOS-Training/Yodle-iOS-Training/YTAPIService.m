@@ -13,7 +13,7 @@
 #import "YTModel+Data.h"
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
-NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://www.filltext.com/?rows=100&header={lorem|10}&body={lorem|50}";
+NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://www.filltext.com/?rows=%lu&header=%%7Blorem%%7C%lu%%7D&body=%%7Blorem%%7C%lu%%7D";
 NSUInteger const YTAPIServiceMinimumImageSize = 20;
 NSUInteger const YTAPIServiceHeaderWordCount = 5;
 NSUInteger const YTAPIServiceBodyWordCount = 50;
@@ -30,10 +30,10 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 	NSOperationQueue* currentQueue = [NSOperationQueue currentQueue];
 	
 	[[[NSOperationQueue alloc] init] addOperationWithBlock:^{
-		NSString* urlString = [NSString stringWithFormat:@"%@?rows=%lu&header={lorem|%lu}&body={lorem|%lu}",YTAPIServiceLoremIpsumTextBaseUrl, (unsigned long)count, (unsigned long)YTAPIServiceHeaderWordCount, (unsigned long)YTAPIServiceBodyWordCount];
+		NSString* urlString = [NSString stringWithFormat:YTAPIServiceLoremIpsumTextBaseUrl, (unsigned long)count, (unsigned long)YTAPIServiceHeaderWordCount, (unsigned long)YTAPIServiceBodyWordCount];
 		NSURL* textURL = [NSURL URLWithString:urlString];
 		NSData *textData = [NSData dataWithContentsOfURL:textURL];
-		NSArray* arrayOfDictionaries = [self arrayFromData:textData];
+		NSArray* arrayOfDictionaries = [NSJSONSerialization JSONObjectWithData:textData options:0 error:nil];
 		
 		for (int i = 0; i < arrayOfDictionaries.count; i++) {
 			YTModel* model = [[YTModel alloc] init];
