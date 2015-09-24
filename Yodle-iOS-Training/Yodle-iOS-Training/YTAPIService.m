@@ -13,8 +13,10 @@
 #import "YTModel+Data.h"
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
-NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://loripsum.net/api/1/short/headers/plaintext";
+NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://www.filltext.com/?rows=100&header={lorem|10}&body={lorem|50}";
 NSUInteger const YTAPIServiceMinimumImageSize = 20;
+NSUInteger const YTAPIServiceHeaderWordCount = 5;
+NSUInteger const YTAPIServiceBodyWordCount = 50;
 
 @interface YTAPIService ()
 
@@ -24,26 +26,38 @@ NSUInteger const YTAPIServiceMinimumImageSize = 20;
 
 - (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray<YTModel*>*))success
 {
-	NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:count];
+	NSMutableArray* arrayOfModels = [[NSMutableArray alloc] initWithCapacity:count];
 	NSOperationQueue* currentQueue = [NSOperationQueue currentQueue];
 	
 	[[[NSOperationQueue alloc] init] addOperationWithBlock:^{
-		for (int i=0; i<count; i++) {
-			NSURL* textURL = [NSURL URLWithString:YTAPIServiceLoremIpsumTextBaseUrl];
-			NSData *textData = [NSData dataWithContentsOfURL:textURL];
-			
-			YTModel* model = [YTModel modelWithData:textData];
+		NSString* urlString = [NSString stringWithFormat:@"%@?rows=%lu&header={lorem|%lu}&body={lorem|%lu}",YTAPIServiceLoremIpsumTextBaseUrl, (unsigned long)count, (unsigned long)YTAPIServiceHeaderWordCount, (unsigned long)YTAPIServiceBodyWordCount];
+		NSURL* textURL = [NSURL URLWithString:urlString];
+		NSData *textData = [NSData dataWithContentsOfURL:textURL];
+		NSArray* arrayOfDictionaries = [self arrayFromData:textData];
+		
+		for (int i = 0; i < arrayOfDictionaries.count; i++) {
+			YTModel* model = [[YTModel alloc] init];
+			model.header = (arrayOfDictionaries[i])[@"header"];
+			model.body = (arrayOfDictionaries[i])[@"body"];
 			model.imageURL = [NSURL URLWithString:YTAPIServiceImageBaseUrl];
-			[array addObject:model];
+			[arrayOfModels addObject:model];
 		}
 		
 		[currentQueue addOperationWithBlock:^{
 			if (success) {
-				success([array copy]);
+				success([arrayOfModels copy]);
 			}
 		}];
 	}];
+}
+
+- (NSArray<NSDictionary*>*)arrayFromData:(NSData*)data
+{
+	NSMutableArray* arrayOfDictionaries = [[NSMutableArray alloc] init];
 	
+	//TODO
+	
+	return arrayOfDictionaries;
 }
 
 @end
