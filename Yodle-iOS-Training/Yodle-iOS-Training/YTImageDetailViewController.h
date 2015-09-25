@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "YTModel.h"
-#import "YTMurrayDetailDelegate.h"
 
 @interface YTImageDetailViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) id<YTMurrayDetailDelegate> delegate;
-@property (strong, nonatomic) YTModel* model;
+@property (weak, nonatomic) YTModel* model;
 @property (strong, nonatomic) UIImage* modelImage;
 
 @end

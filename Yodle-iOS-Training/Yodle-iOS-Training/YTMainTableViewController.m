@@ -34,6 +34,11 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 	}];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -56,16 +61,6 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
     return cell;
 }
 
-#pragma mark - Murray Detail Delegate
-
-- (void)didChangeDetail:(YTModel*)newModel
-{
-	NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.models indexOfObject:newModel] inSection:0];
-	YTCell* updatedCell = (YTCell*)[self.tableView cellForRowAtIndexPath:indexPath];
-	updatedCell.model = newModel;
-	[self.tableView reloadData];
-}
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
@@ -73,7 +68,6 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
 		destination.model = ((YTCell*)sender).model;
-		destination.delegate = self;
 		destination.modelImage = ((YTCell*)sender).thumbnail.image;
 	}
 }
