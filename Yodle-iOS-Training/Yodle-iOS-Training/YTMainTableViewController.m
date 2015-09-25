@@ -7,11 +7,12 @@
 //
 
 #import "YTMainTableViewController.h"
-#import "YTCell.h"
+#import "YTModelCell.h"
 #import "YTAPIService.h"
 #import "YTImageDetailViewController.h"
+#import "YTSpinnerCell.h"
 
-const NSUInteger YTMainTableViewControllerRowCount = 5;
+const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 
 @interface YTMainTableViewController ()
 
@@ -27,11 +28,9 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
     [super viewDidLoad];
 	
 	self.apiService = [[YTAPIService alloc] init];
+	self.models = [[NSArray alloc] init];
 	
-	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerRowCount success:^(NSArray<YTModel*>* models) {
-		self.models = models;
-		[self.tableView reloadData];
-	}];
+	[self fetchMoreModels];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,26 +38,57 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 	[self.tableView reloadData];
 }
 
+#pragma mark -
+
+- (void)fetchMoreModels
+{
+	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerFetchAmount success:^(NSArray<YTModel*>* models) {
+		NSMutableArray* tempModels = [NSMutableArray arrayWithArray:self.models];
+		[tempModels addObjectsFromArray:models];
+		self.models = [tempModels copy];
+		[self.tableView reloadData];
+	}];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-	//TODO: Spinner
-    return self.models.count;
+	if (section == 0) {
+		return self.models.count;
+	}
+	return 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    YTCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
+	if (indexPath.section == 0) {
+		YTModelCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MyReuse" forIndexPath:indexPath];
+		
+		[cell configureWithModel:self.models[indexPath.row]];
+		
+		return cell;
+	} else {
+		YTSpinnerCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Spinner" forIndexPath:indexPath];
+		
+		[cell.spinner startAnimating];
+		
+		return cell;
+	}
+}
+
+- (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
+{
+	if (![cell isKindOfClass:[YTSpinnerCell class]]) {
+		return;
+	}
 	
-	[cell configureWithModel:self.models[indexPath.row]];
-	
-    return cell;
+	[self fetchMoreModels];
 }
 
 #pragma mark - Navigation
@@ -67,8 +97,8 @@ const NSUInteger YTMainTableViewControllerRowCount = 5;
 {
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
-		destination.model = ((YTCell*)sender).model;
-		destination.modelImage = ((YTCell*)sender).thumbnail.image;
+		destination.model = ((YTModelCell*)sender).model;
+		destination.modelImage = ((YTModelCell*)sender).thumbnail.image;
 	}
 }
 

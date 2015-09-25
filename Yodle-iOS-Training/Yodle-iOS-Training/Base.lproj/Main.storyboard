@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyReuse" id="7ID-QB-xuo" customClass="YTCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyReuse" id="7ID-QB-xuo" customClass="YTModelCell">
                                 <rect key="frame" x="0.0" y="86" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ID-QB-xuo" id="Ej7-cz-ifr">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPJ-vG-NsC" userLabel="Title">
@@ -63,6 +63,26 @@
                                     <outlet property="headerLabel" destination="aPJ-vG-NsC" id="iNS-Nk-rRw"/>
                                     <outlet property="thumbnail" destination="ofh-Y0-z5u" id="eOX-9t-Nfb"/>
                                     <segue destination="dme-xt-I75" kind="show" identifier="CellDetailSegue" id="1gY-aU-2nI"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Spinner" id="lhq-w6-ILA" customClass="YTSpinnerCell">
+                                <rect key="frame" x="0.0" y="206" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhq-w6-ILA" id="n7v-d5-EjZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IPI-OJ-YK3">
+                                            <rect key="frame" x="290" y="50" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IPI-OJ-YK3" firstAttribute="centerX" secondItem="n7v-d5-EjZ" secondAttribute="centerX" id="ZLi-pu-Cxu"/>
+                                        <constraint firstItem="IPI-OJ-YK3" firstAttribute="centerY" secondItem="n7v-d5-EjZ" secondAttribute="centerY" id="aMM-9T-cRl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="spinner" destination="IPI-OJ-YK3" id="p94-zz-fwT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

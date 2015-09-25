@@ -1,5 +1,5 @@
 //
-//  YTCell.h
+//  YTModelCell.h
 //  Yodle-iOS-Training
 //
 //  Created by Mark Rogers on 8/13/15.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YTModel.h"
 
-@interface YTCell : UITableViewCell
+@interface YTModelCell : UITableViewCell
 
 @property (strong, nonatomic) YTModel* model;
 @property (weak, nonatomic) IBOutlet UIImageView* thumbnail;
