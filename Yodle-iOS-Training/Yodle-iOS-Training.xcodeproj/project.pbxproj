@@ -63,6 +63,7 @@
 		43192A811B7D251300943B6C /* NSNumber+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Random.m"; sourceTree = "<group>"; };
 		4371A9DA1BB581E90076896D /* YTSpinnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSpinnerCell.h; sourceTree = "<group>"; };
 		4371A9DB1BB581E90076896D /* YTSpinnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSpinnerCell.m; sourceTree = "<group>"; };
+		437EBEF71BB9C7730017BA48 /* YTImageDetailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTImageDetailViewControllerDelegate.h; sourceTree = "<group>"; };
 		9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yodle-iOS-Training.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFD5BA96B66A9CD00307A50C /* Pods-Yodle-iOS-Training.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodle-iOS-Training.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +227,7 @@
 		43192A7E1B7D1A6C00943B6C /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				437EBEF71BB9C7730017BA48 /* YTImageDetailViewControllerDelegate.h */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";

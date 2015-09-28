@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTImageDetailViewControllerDelegate.h"
 
-@interface YTMainTableViewController : UITableViewController
+@interface YTMainTableViewController : UITableViewController <YTImageDetailViewControllerDelegate>
 
 @end

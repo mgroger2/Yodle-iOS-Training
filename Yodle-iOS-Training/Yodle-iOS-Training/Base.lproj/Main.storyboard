@@ -120,7 +120,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWd-uu-ANb" userLabel="Editing View">
-                                        <rect key="frame" x="8" y="310" width="124" height="42"/>
+                                        <rect key="frame" x="8" y="320" width="124" height="42"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-MQ-bVm">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="42"/>
@@ -153,10 +153,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLs-ug-IjB" userLabel="Displaying View">
-                                        <rect key="frame" x="8" y="310" width="124" height="42"/>
+                                        <rect key="frame" x="8" y="320" width="124" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
-                                                <rect key="frame" x="0.0" y="0.0" width="39" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="iuu-Iw-dnf"/>
                                                 </constraints>
@@ -191,7 +191,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNh-v1-a54">
-                                        <rect key="frame" x="8" y="362" width="124" height="21"/>
+                                        <rect key="frame" x="8" y="372" width="124" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="124" id="PW2-jU-Yif"/>
                                         </constraints>
@@ -205,7 +205,7 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="jNh-v1-a54" secondAttribute="trailing" id="3Dp-ep-pU2"/>
                                     <constraint firstItem="jNh-v1-a54" firstAttribute="leading" secondItem="XUX-Ti-TeX" secondAttribute="leadingMargin" id="7ee-hL-HOp"/>
                                     <constraint firstItem="jNh-v1-a54" firstAttribute="top" secondItem="bWd-uu-ANb" secondAttribute="bottom" constant="10" id="B2J-k3-vH9"/>
-                                    <constraint firstItem="LLs-ug-IjB" firstAttribute="top" secondItem="6li-TM-uaG" secondAttribute="bottom" id="CbK-m9-JfY"/>
+                                    <constraint firstItem="LLs-ug-IjB" firstAttribute="top" secondItem="6li-TM-uaG" secondAttribute="bottom" constant="10" id="CbK-m9-JfY"/>
                                     <constraint firstAttribute="bottom" secondItem="jNh-v1-a54" secondAttribute="bottom" id="KBy-DL-2uT"/>
                                     <constraint firstItem="LLs-ug-IjB" firstAttribute="leading" secondItem="XUX-Ti-TeX" secondAttribute="leadingMargin" id="MLs-vw-Foj"/>
                                     <constraint firstItem="bWd-uu-ANb" firstAttribute="top" secondItem="LLs-ug-IjB" secondAttribute="top" id="VHZ-RT-nW0"/>

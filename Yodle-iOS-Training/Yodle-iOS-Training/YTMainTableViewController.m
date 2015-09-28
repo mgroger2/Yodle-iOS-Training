@@ -38,13 +38,6 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 	[self fetchMoreModels];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-	
-	[self.tableView reloadData];
-}
-
 #pragma mark - Private
 
 - (void)fetchMoreModels
@@ -62,6 +55,14 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 		[self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 		[self.tableView endUpdates];
 	}];
+}
+
+#pragma mark - YTImageDetailViewControllerDelegate
+
+- (void)reloadCellForModel:(YTModel *)model
+{
+	NSIndexPath* indexPathForModel = [NSIndexPath indexPathForRow:[self.models indexOfObject:model] inSection:0];
+	[self.tableView reloadRowsAtIndexPaths:@[ indexPathForModel ] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - Table view data source
@@ -110,6 +111,7 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 	if ([segue.identifier isEqualToString:YTMainTableViewControllerDetailSegue]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
 		destination.model = ((YTModelCell*)sender).model;
+		destination.delegate = self;
 	}
 }
 

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YTModel.h"
+#import "YTImageDetailViewControllerDelegate.h"
 
 @interface YTImageDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) YTModel* model;
+@property (weak, nonatomic) id<YTImageDetailViewControllerDelegate> delegate;
 
 @end
