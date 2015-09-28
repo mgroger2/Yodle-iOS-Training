@@ -52,7 +52,7 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 		}
 
 		[self.tableView beginUpdates];
-		[self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+		[self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 		[self.tableView endUpdates];
 	}];
 }

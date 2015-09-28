@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FC5412554E1CC2DB71CC744B"
-               BuildableName = "libPods-Yodle-iOS-Training.a"
-               BlueprintName = "Pods-Yodle-iOS-Training"
+               BlueprintIdentifier = "4CBA0EE1C76895C5FEA4E9A5"
+               BuildableName = "libSDWebImage.a"
+               BlueprintName = "SDWebImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

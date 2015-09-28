@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Yodle-iOS-Training-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Yodle-iOS-Training-SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Yodle-iOS-Training.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIActivityIndicator-for-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BDC9943BC442D26F96D0FF6</key>
+		<key>199F86886065D6E7B6A0E0C3BFDA04A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1B4881F22067A29DD5423DFB</key>
+		<key>C35D9BC5384C4A60A813913371ECEEF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8908A32497DD7FA13208AC75</key>
+		<key>EC511E28905FE2C20E23DA0E564D2673</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,12 +7,10 @@
 //
 
 #import "YTModelCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 #import "YTModel+Data.h"
 
 @interface YTModelCell ()
-
-//@property (assign, nonatomic) BOOL hasImage;
 
 @end
 
@@ -24,7 +22,7 @@
 	self.headerLabel.text = model.header;
 	self.bodyLabel.text = model.body;
 	
-	[self.thumbnail sd_setImageWithURL:self.model.imageURL placeholderImage:[UIImage imageNamed:@"Char Floating Head.jpg"]];
+	[self.thumbnail setImageWithURL:self.model.imageURL usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 }
 
 @end

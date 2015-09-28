@@ -3,7 +3,7 @@
 
 target 'Yodle-iOS-Training' do
 
-pod 'SDWebImage', '~>3.7'
+pod 'UIActivityIndicator-for-SDWebImage', '~> 1.2' #Async downloading of images with spinner
 
 end
 

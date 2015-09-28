@@ -8,8 +8,6 @@
 
 #import "YTAPIService.h"
 #import "NSNumber+Random.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-#import <AFNetworking/AFNetworking.h>
 #import "YTModel+Data.h"
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
