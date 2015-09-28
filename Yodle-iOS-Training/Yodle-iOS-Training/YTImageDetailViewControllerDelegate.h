@@ -11,6 +11,6 @@
 
 @protocol YTImageDetailViewControllerDelegate <NSObject>
 
-- (void)reloadCellForModel:(YTModel*)model;
+- (void)modelDidChange:(YTModel*)model;
 
 @end

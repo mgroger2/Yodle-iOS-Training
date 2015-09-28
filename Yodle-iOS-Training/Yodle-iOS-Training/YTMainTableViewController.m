@@ -59,9 +59,9 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 
 #pragma mark - YTImageDetailViewControllerDelegate
 
-- (void)reloadCellForModel:(YTModel *)model
+- (void)modelDidChange:(YTModel *)model
 {
-	NSIndexPath* indexPathForModel = [NSIndexPath indexPathForRow:[self.models indexOfObject:model] inSection:0];
+	NSIndexPath* indexPathForModel = [NSIndexPath indexPathForRow:[self.models indexOfObject:model] inSection:YTMainTableViewControllerDataSection];
 	[self.tableView reloadRowsAtIndexPaths:@[ indexPathForModel ] withRowAnimation:UITableViewRowAnimationFade];
 }
 

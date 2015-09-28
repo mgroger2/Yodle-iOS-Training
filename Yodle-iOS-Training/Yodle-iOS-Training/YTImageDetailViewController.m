@@ -87,7 +87,7 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 	self.model.header = newTitle;
 	self.titleLabel.text = newTitle;
 	
-	[self.delegate reloadCellForModel:self.model];
+	[self.delegate modelDidChange:self.model];
 }
 
 #pragma mark - UITextFieldDelegate
