@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 {
 	self.titleLabel.text = self.model.header;
 	self.descriptionLabel.text = self.model.body;
+	self.imageDetail.image = self.model.image;
 	self.titleEditTextield.delegate = self;
 	self.titleEditView.hidden = YES;
 	self.titleDisplayView.hidden = NO;
@@ -45,7 +46,6 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 {
 	[self formatLabel];
 	
-	self.imageDetail.image = self.modelImage;
 	self.imageWidthConstraint.constant = self.imageDetail.image.size.width;
 	self.imageHeightConstraint.constant = self.imageDetail.image.size.height;
 }

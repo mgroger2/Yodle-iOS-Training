@@ -12,6 +12,5 @@
 @interface YTImageDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) YTModel* model;
-@property (strong, nonatomic) UIImage* modelImage;
 
 @end

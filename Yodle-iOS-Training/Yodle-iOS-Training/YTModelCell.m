@@ -16,13 +16,23 @@
 
 @implementation YTModelCell
 
+- (void)awakeFromNib
+{
+	self.thumbnail.layer.borderColor = [UIColor lightGrayColor].CGColor;
+	self.thumbnail.layer.borderWidth = 0.5;
+	self.thumbnail.contentMode = UIViewContentModeScaleAspectFit;
+	self.thumbnail.clipsToBounds = YES;
+}
+
 - (void)configureWithModel:(YTModel*)model
 {
 	self.model = model;
 	self.headerLabel.text = model.header;
 	self.bodyLabel.text = model.body;
 	
-	[self.thumbnail setImageWithURL:self.model.imageURL usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	[self.thumbnail setImageWithURL:self.model.imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
+		self.model.image = image;
+	} usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 }
 
 @end

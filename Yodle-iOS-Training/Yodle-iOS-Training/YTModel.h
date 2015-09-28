@@ -12,6 +12,7 @@
 @interface YTModel : NSObject
 
 @property (strong, nonatomic) NSURL* imageURL;
+@property (strong, nonatomic) UIImage* image;
 @property (copy, nonatomic) NSString* header;
 @property (copy, nonatomic) NSString* body;
 

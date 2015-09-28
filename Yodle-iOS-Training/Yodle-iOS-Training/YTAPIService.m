@@ -12,7 +12,7 @@
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
 NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://www.filltext.com/?rows=%lu&header=%%7Blorem%%7C%lu%%7D&body=%%7Blorem%%7C%lu%%7D";
-NSUInteger const YTAPIServiceMinimumImageSize = 20;
+NSUInteger const YTAPIServiceMinimumImageSize = 160;
 NSUInteger const YTAPIServiceHeaderWordCount = 5;
 NSUInteger const YTAPIServiceBodyWordCount = 50;
 

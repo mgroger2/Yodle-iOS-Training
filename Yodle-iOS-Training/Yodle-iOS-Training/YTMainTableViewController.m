@@ -91,12 +91,18 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 
 - (void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell*)cell forRowAtIndexPath:(NSIndexPath*)indexPath
 {
-	if (![cell isKindOfClass:[YTSpinnerCell class]]) {
-		return;
+	if ([cell isKindOfClass:[YTSpinnerCell class]]) {
+		[self fetchMoreModels];
 	}
-	
-	[self fetchMoreModels];
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//	if (indexPath.section == 0) {
+//		YTModel* model = self.models[indexPath.row];
+//		
+//	}
+//}
 
 #pragma mark - Navigation
 
@@ -105,7 +111,6 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 	if ([segue.identifier isEqualToString:@"CellDetailSegue"]) {
 		YTImageDetailViewController* destination = segue.destinationViewController;
 		destination.model = ((YTModelCell*)sender).model;
-		destination.modelImage = ((YTModelCell*)sender).thumbnail.image;
 	}
 }
 
