@@ -55,22 +55,11 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 	}];
 }
 
-- (NSArray<NSDictionary*>*)arrayFromData:(NSData*)data
+- (NSURL*)randomImageURL;
 {
-	NSMutableArray* arrayOfDictionaries = [[NSMutableArray alloc] init];
 	
-	//TODO
-	
-	return arrayOfDictionaries;
-}
-
-- (NSURL*)randomImageURL;//ForWidth:(CGFloat)maxWidth
-{
-	//	NSUInteger minimumSize = 20;
-	//	NSUInteger maximumHeight = 400;
-	
-	int width = [NSNumber randomIntegerBetween:20 and:200];
-	int height = [NSNumber randomIntegerBetween:20 and:400];
+	int width = [NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:YTAPIServiceMinimumImageSize * 2];
+	int height = [NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:YTAPIServiceMinimumImageSize * 2];
 	
 	NSString* imageAPI = [NSString stringWithFormat:@"%@%d/%d", YTAPIServiceImageBaseUrl, width, height];
 	

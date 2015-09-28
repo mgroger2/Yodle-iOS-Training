@@ -112,11 +112,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-Ti-TeX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6li-TM-uaG">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6li-TM-uaG">
                                         <rect key="frame" x="150" y="10" width="300" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="OAb-R5-lRF"/>
-                                            <constraint firstAttribute="width" constant="300" id="nln-vJ-xtJ"/>
+                                            <constraint firstAttribute="width" constant="300" placeholder="YES" id="I04-ua-6aS"/>
+                                            <constraint firstAttribute="height" constant="300" placeholder="YES" id="f0t-nl-sIQ"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWd-uu-ANb" userLabel="Editing View">
@@ -156,7 +156,7 @@
                                         <rect key="frame" x="8" y="320" width="124" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-J2-t31">
-                                                <rect key="frame" x="0.0" y="0.0" width="38.5" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="iuu-Iw-dnf"/>
                                                 </constraints>
@@ -230,8 +230,6 @@
                         <outlet property="bodyLabelWidth" destination="PW2-jU-Yif" id="oCl-3p-xsf"/>
                         <outlet property="descriptionLabel" destination="jNh-v1-a54" id="nfv-kH-vTW"/>
                         <outlet property="imageDetail" destination="6li-TM-uaG" id="RO4-dX-Pcw"/>
-                        <outlet property="imageHeightConstraint" destination="OAb-R5-lRF" id="xIw-FO-qfZ"/>
-                        <outlet property="imageWidthConstraint" destination="nln-vJ-xtJ" id="SGv-3w-F4X"/>
                         <outlet property="scrollView" destination="XUX-Ti-TeX" id="vbV-94-bmf"/>
                         <outlet property="titleDisplayView" destination="LLs-ug-IjB" id="kk6-4E-AjM"/>
                         <outlet property="titleEditButton" destination="0kA-t4-HTa" id="6ma-7D-pmq"/>

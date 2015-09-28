@@ -12,6 +12,5 @@
 @interface YTModel (Data)
 
 + (instancetype)modelWithData:(NSData*)data;
-- (NSURL*)randomImageURL;//ForWidth:(CGFloat)maxWidth;
 
 @end

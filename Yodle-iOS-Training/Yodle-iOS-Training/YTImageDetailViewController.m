@@ -46,8 +46,8 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 {
 	[self formatLabel];
 	
-	self.imageWidthConstraint.constant = self.imageDetail.image.size.width;
-	self.imageHeightConstraint.constant = self.imageDetail.image.size.height;
+//	self.imageWidthConstraint.constant = self.imageDetail.image.size.width;
+//	self.imageHeightConstraint.constant = self.imageDetail.image.size.height;
 }
 
 - (void)formatLabel
