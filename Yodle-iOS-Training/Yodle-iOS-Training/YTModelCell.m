@@ -12,7 +12,7 @@
 
 @interface YTModelCell ()
 
-@property (assign, nonatomic) BOOL hasImage;
+//@property (assign, nonatomic) BOOL hasImage;
 
 @end
 
@@ -24,11 +24,7 @@
 	self.headerLabel.text = model.header;
 	self.bodyLabel.text = model.body;
 	
-	if (!self.hasImage) {
-		[self.thumbnail sd_setImageWithURL:[model randomImageURL] placeholderImage:[UIImage imageNamed:@"Char Floating Head.jpg"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-			self.hasImage = YES;
-		}];
-	}
+	[self.thumbnail sd_setImageWithURL:self.model.imageURL placeholderImage:[UIImage imageNamed:@"Char Floating Head.jpg"]];
 }
 
 @end

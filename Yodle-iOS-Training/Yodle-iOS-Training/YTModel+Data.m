@@ -25,17 +25,4 @@
 	return model;
 }
 
-- (NSURL*)randomImageURL;//ForWidth:(CGFloat)maxWidth
-{
-//	NSUInteger minimumSize = 20;
-//	NSUInteger maximumHeight = 400;
-	
-	int width = [NSNumber randomIntegerBetween:20 and:200];
-	int height = [NSNumber randomIntegerBetween:20 and:400];
-	
-	NSString* imageAPI = [NSString stringWithFormat:@"%@%d/%d", self.imageURL.description, width, height];
-	
-	return [NSURL URLWithString:imageAPI];
-}
-
 @end

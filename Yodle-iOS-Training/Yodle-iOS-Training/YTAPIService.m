@@ -45,7 +45,7 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 			YTModel* model = [[YTModel alloc] init];
 			model.header = (arrayOfDictionaries[i])[@"header"];
 			model.body = (arrayOfDictionaries[i])[@"body"];
-			model.imageURL = [NSURL URLWithString:YTAPIServiceImageBaseUrl];
+			model.imageURL = [self randomImageURL];
 			[arrayOfModels addObject:model];
 		}
 		
@@ -64,6 +64,19 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 	//TODO
 	
 	return arrayOfDictionaries;
+}
+
+- (NSURL*)randomImageURL;//ForWidth:(CGFloat)maxWidth
+{
+	//	NSUInteger minimumSize = 20;
+	//	NSUInteger maximumHeight = 400;
+	
+	int width = [NSNumber randomIntegerBetween:20 and:200];
+	int height = [NSNumber randomIntegerBetween:20 and:400];
+	
+	NSString* imageAPI = [NSString stringWithFormat:@"%@%d/%d", YTAPIServiceImageBaseUrl, width, height];
+	
+	return [NSURL URLWithString:imageAPI];
 }
 
 @end

@@ -17,7 +17,7 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 @interface YTMainTableViewController ()
 
 @property (strong, nonatomic) YTAPIService* apiService;
-@property (strong, nonatomic) NSArray<YTModel*>* models;
+@property (strong, nonatomic) NSMutableArray<YTModel*>* models;
 
 @end
 
@@ -28,7 +28,7 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
     [super viewDidLoad];
 	
 	self.apiService = [[YTAPIService alloc] init];
-	self.models = [[NSArray alloc] init];
+	self.models = [NSMutableArray array];
 	
 	[self fetchMoreModels];
 }
@@ -43,10 +43,17 @@ const NSUInteger YTMainTableViewControllerFetchAmount = 5;
 - (void)fetchMoreModels
 {
 	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerFetchAmount success:^(NSArray<YTModel*>* models) {
-		NSMutableArray* tempModels = [NSMutableArray arrayWithArray:self.models];
-		[tempModels addObjectsFromArray:models];
-		self.models = [tempModels copy];
-		[self.tableView reloadData];
+		NSUInteger originalCount = self.models.count;
+		[self.models addObjectsFromArray:models];
+		
+		NSMutableArray* indexPaths = [NSMutableArray array];
+		for (int i = 0 ; i < models.count; i++) {
+			[indexPaths addObject:[NSIndexPath indexPathForRow:originalCount+i inSection:0]];
+		}
+
+		[self.tableView beginUpdates];
+		[self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+		[self.tableView endUpdates];
 	}];
 }
 
