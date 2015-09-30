@@ -8,7 +8,6 @@
 
 #import "YTAPIService.h"
 #import "NSNumber+Random.h"
-#import "YTModel+Data.h"
 
 NSString* const YTAPIServiceImageBaseUrl = @"http://www.fillmurray.com/";
 NSString* const YTAPIServiceLoremIpsumTextBaseUrl = @"http://www.filltext.com/?rows=%lu&header=%%7Blorem%%7C%lu%%7D&body=%%7Blorem%%7C%lu%%7D";
@@ -56,8 +55,7 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 }
 
 - (NSURL*)randomImageURL;
-{
-	
+{	
 	int width = [NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:YTAPIServiceMinimumImageSize * 2];
 	int height = [NSNumber randomIntegerBetween:YTAPIServiceMinimumImageSize and:YTAPIServiceMinimumImageSize * 2];
 	

@@ -12,8 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView* scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView* imageDetail;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageWidthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView* titleDisplayView;
 @property (weak, nonatomic) IBOutlet UIButton* titleEditButton;
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
@@ -43,14 +41,6 @@ typedef NS_ENUM(NSUInteger, YTImageDetailViewControllerMode) {
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
-	[self formatLabel];
-	
-//	self.imageWidthConstraint.constant = self.imageDetail.image.size.width;
-//	self.imageHeightConstraint.constant = self.imageDetail.image.size.height;
-}
-
-- (void)formatLabel
 {
 	self.bodyLabelWidth.constant = self.view.frame.size.width - 16;
 	

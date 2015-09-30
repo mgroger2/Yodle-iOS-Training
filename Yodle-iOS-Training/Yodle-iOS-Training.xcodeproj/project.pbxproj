@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43008C411BB33C9A00065792 /* YTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43008C401BB33C9A00065792 /* YTModel.m */; settings = {ASSET_TAGS = (); }; };
-		43008C441BB33F4300065792 /* YTModel+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 43008C431BB33F4300065792 /* YTModel+Data.m */; settings = {ASSET_TAGS = (); }; };
+		43008C411BB33C9A00065792 /* YTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43008C401BB33C9A00065792 /* YTModel.m */; };
 		43192A3C1B7CEBF300943B6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A3B1B7CEBF300943B6C /* main.m */; };
 		43192A3F1B7CEBF300943B6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A3E1B7CEBF300943B6C /* AppDelegate.m */; };
 		43192A451B7CEBF300943B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43192A431B7CEBF300943B6C /* Main.storyboard */; };
@@ -20,7 +19,7 @@
 		43192A6A1B7CF45500943B6C /* YTAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A691B7CF45500943B6C /* YTAPIService.m */; };
 		43192A7D1B7D04D500943B6C /* YTImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A7C1B7D04D500943B6C /* YTImageDetailViewController.m */; };
 		43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 43192A811B7D251300943B6C /* NSNumber+Random.m */; };
-		4371A9DC1BB581E90076896D /* YTSpinnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371A9DB1BB581E90076896D /* YTSpinnerCell.m */; settings = {ASSET_TAGS = (); }; };
+		4371A9DC1BB581E90076896D /* YTSpinnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371A9DB1BB581E90076896D /* YTSpinnerCell.m */; };
 		538E2C2052C3DD2FD107AE0B /* libPods-Yodle-iOS-Training.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB8FDB4D2FB3A6E24363E42 /* libPods-Yodle-iOS-Training.a */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +37,6 @@
 		22473E347B502C6954570FBC /* Pods-Yodle-iOS-Training.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodle-iOS-Training.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yodle-iOS-Training/Pods-Yodle-iOS-Training.release.xcconfig"; sourceTree = "<group>"; };
 		43008C3F1BB33C9A00065792 /* YTModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTModel.h; sourceTree = "<group>"; };
 		43008C401BB33C9A00065792 /* YTModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTModel.m; sourceTree = "<group>"; };
-		43008C421BB33F4300065792 /* YTModel+Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTModel+Data.h"; sourceTree = "<group>"; };
-		43008C431BB33F4300065792 /* YTModel+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTModel+Data.m"; sourceTree = "<group>"; };
 		43192A361B7CEBF300943B6C /* Yodle-iOS-Training.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yodle-iOS-Training.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43192A3A1B7CEBF300943B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43192A3B1B7CEBF300943B6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -191,8 +188,6 @@
 			children = (
 				43192A801B7D251300943B6C /* NSNumber+Random.h */,
 				43192A811B7D251300943B6C /* NSNumber+Random.m */,
-				43008C421BB33F4300065792 /* YTModel+Data.h */,
-				43008C431BB33F4300065792 /* YTModel+Data.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -398,7 +393,6 @@
 				4371A9DC1BB581E90076896D /* YTSpinnerCell.m in Sources */,
 				43192A821B7D251300943B6C /* NSNumber+Random.m in Sources */,
 				43192A6A1B7CF45500943B6C /* YTAPIService.m in Sources */,
-				43008C441BB33F4300065792 /* YTModel+Data.m in Sources */,
 				43192A621B7CEC9C00943B6C /* YTMainTableViewController.m in Sources */,
 				43192A661B7CECE900943B6C /* YTModelCell.m in Sources */,
 				43008C411BB33C9A00065792 /* YTModel.m in Sources */,

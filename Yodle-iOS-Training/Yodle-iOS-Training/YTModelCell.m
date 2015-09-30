@@ -8,7 +8,6 @@
 
 #import "YTModelCell.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
-#import "YTModel+Data.h"
 
 @interface YTModelCell ()
 
