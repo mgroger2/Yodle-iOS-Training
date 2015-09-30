@@ -22,7 +22,7 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 @interface YTMainTableViewController ()
 
 @property (strong, nonatomic) YTAPIService* apiService;
-@property (strong, nonatomic) NSMutableArray<YTModel*>* models;
+@property (strong, nonatomic) NSMutableArray* models;
 
 @end
 
@@ -42,7 +42,7 @@ NSString* const YTMainTableViewControllerDetailSegue = @"CellDetailSegue";
 
 - (void)fetchMoreModels
 {
-	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerFetchAmount success:^(NSArray<YTModel*>* models) {
+	[self.apiService fetchModelObjectsWithCount:YTMainTableViewControllerFetchAmount success:^(NSArray* models) {
 		NSUInteger originalCount = self.models.count;
 		[self.models addObjectsFromArray:models];
 		

@@ -11,8 +11,6 @@
 
 @interface YTAPIService : NSObject
 
-//- (void)fetchImageWithMaxSize:(CGSize)size cell:(YTCell*)cell;
-//- (void)fetchLoremIpsumTextForCell:(YTCell*)cell;
-- (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray<YTModel*>*))success;
+- (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray*))success;
 
 @end

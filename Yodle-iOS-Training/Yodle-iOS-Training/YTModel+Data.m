@@ -15,7 +15,7 @@
 {
 	NSString* successString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	successString = [successString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	NSArray<NSString*>* array = [successString componentsSeparatedByString: @"\n\n"];
+	NSArray* array = [successString componentsSeparatedByString: @"\n\n"];
 	
 	YTModel* model = [[self alloc] init];
 	model.header = [array firstObject];

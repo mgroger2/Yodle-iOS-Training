@@ -22,7 +22,7 @@ NSUInteger const YTAPIServiceBodyWordCount = 50;
 
 @implementation YTAPIService
 
-- (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray<YTModel*>*))success
+- (void)fetchModelObjectsWithCount:(NSUInteger)count success:(void(^)(NSArray*))success
 {
 	NSMutableArray* arrayOfModels = [[NSMutableArray alloc] initWithCapacity:count];
 	NSOperationQueue* currentQueue = [NSOperationQueue currentQueue];
