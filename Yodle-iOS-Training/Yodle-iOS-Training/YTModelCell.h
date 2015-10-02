@@ -11,7 +11,7 @@
 
 @interface YTModelCell : UITableViewCell
 
-@property (strong, nonatomic) YTModel* model;
+@property (weak, nonatomic) YTModel* model;
 @property (weak, nonatomic) IBOutlet UIImageView* thumbnail;
 @property (weak, nonatomic) IBOutlet UILabel* headerLabel;
 @property (weak, nonatomic) IBOutlet UILabel* bodyLabel;
